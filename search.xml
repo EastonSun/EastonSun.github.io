@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用自定义域名访问GitHub Pages</title>
+    <url>/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/</url>
+    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
+<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
+<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
+<ul>
+<li>IPv4</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>IPv6</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
+<li>打开静态网站的存储库</li>
+<li>点击Settings</li>
+<li>在左边栏找到Code and automation，点击下方的Pages</li>
+<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
+</ul>
+<p><img data-src="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Win11搭建hexo并部署到GitHub</title>
     <url>/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/</url>
     <content><![CDATA[<h1 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h1><h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><p>在安装Hexo前，需要先安装以下程序</p>
@@ -65,29 +88,6 @@
 <li>codeblock：代码高亮，个人比较喜欢a11y-dark，更多的高亮主题请<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9oaWdobGlnaHQv">参考<i class="fa fa-external-link-alt"></i></span></li>
 </ul>
 <p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">官网文档<i class="fa fa-external-link-alt"></i></span>根据个人需要进行修改</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>使用自定义域名访问GitHub Pages</title>
-    <url>/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/</url>
-    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
-<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
-<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
-<ul>
-<li>IPv4</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>IPv6</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
-<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
-<li>打开静态网站的存储库</li>
-<li>点击Settings</li>
-<li>在左边栏找到Code and automation，点击下方的Pages</li>
-<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
-</ul>
-<p><img data-src="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
 ]]></content>
   </entry>
 </search>
