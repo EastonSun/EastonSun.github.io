@@ -18,34 +18,6 @@
       </tags>
   </entry>
   <entry>
-    <title>优化Github Pages国内的访问速度</title>
-    <url>/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/</url>
-    <content><![CDATA[<p>本博客托管在Github Pages上，简单方便快捷唯一不好的就是国内访问速度不好，甚至有时出现访问不了的情况。</p>
-<div class="link-grid"><div class="link-grid-container">
-<object class="link-grid-image" data="/images/logo.png"></object>
-<p>Win11搭建hexo并部署到Github</p><p><mark class="label ">E云笔记</mark>  我的学习笔记</p>
-<a href="https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"></a>
-</div></div>
-<p>网上有众多的解决方案，能够白嫖的也就是<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>，经过对比后我最终选择了<mark class="label info">Vercel</mark></p>
-<span id="more"></span>
-<p>从同一时间测速的情况来看<mark class="label info">Vercel</mark>是最理想的</p>
-<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Github</a></li><li class="tab"><a href="#first-tab-2">netlify</a></li><li class="tab"><a href="#first-tab-3">vercel</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/github.png" class=""></div><div class="tab-pane" id="first-tab-2"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/netlify.png" class=""></div><div class="tab-pane" id="first-tab-3"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel.png" class=""></div></div></div>
-
-<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p><span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>的注册都非常简单，使用Github帐号即可注册与登录。<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel_reg.png" alt="vercel注册"></p>
-<h2 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h2><p>点击右上角的Add New选择Project<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/project.png" alt="project"><br>找到需要导入的项目并点击Import就可完成项目的导入</p>
-<h2 id="使用自定义域名访问"><a href="#使用自定义域名访问" class="headerlink" title="使用自定义域名访问"></a>使用自定义域名访问</h2><p>整个导入的过程很快，导入完成后进入到刚导入的项目，点击上方的Settings再点击右边的Domains，这时就能看到一个以项目名称开头的二级域名，这个域名很长不方便记忆，这时我们可以添加一个自定义域名。</p>
-<h3 id="添加域名解析"><a href="#添加域名解析" class="headerlink" title="添加域名解析"></a>添加域名解析</h3><p>先在域名解析商处添加一个CNAME记录。</p>
-<div class="note danger"><p>添加解析记录时，目标处要填入<strong>name-china.vercel-dns.com</strong>，这是官方专门为中国大陆优化过的</p>
-</div>
-<h3 id="添加自定义域名"><a href="#添加自定义域名" class="headerlink" title="添加自定义域名"></a>添加自定义域名</h3><p><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/domain.png" alt="domain"><br>在mywebsite.com处填入域名点击Add就完成了域名添加</p>
-<h3 id="二级域名跳转到自定义域名"><a href="#二级域名跳转到自定义域名" class="headerlink" title="二级域名跳转到自定义域名"></a>二级域名跳转到自定义域名</h3><p>点击二级域名旁的Edit，Redirect to处填入自定义域名，Status Code处选择308 Permanent Redirect<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/redirect.png" alt="redirect"></p>
-]]></content>
-      <tags>
-        <tag>Github Pages</tag>
-        <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Win11搭建hexo并部署到GitHub</title>
     <url>/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/</url>
     <content><![CDATA[<h1 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h1><h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><p>在安装Hexo前，需要先安装以下程序</p>
@@ -119,6 +91,34 @@
       <tags>
         <tag>hexo</tag>
         <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>优化Github Pages国内的访问速度</title>
+    <url>/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/</url>
+    <content><![CDATA[<p>本博客托管在Github Pages上，简单方便快捷唯一不好的就是国内访问速度不好，甚至有时出现访问不了的情况。</p>
+<div class="link-grid"><div class="link-grid-container">
+<object class="link-grid-image" data="/images/logo.png"></object>
+<p>Win11搭建hexo并部署到Github</p><p><mark class="label ">E云笔记</mark>  我的学习笔记</p>
+<a href="https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"></a>
+</div></div>
+<p>网上有众多的解决方案，能够白嫖的也就是<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>，经过对比后我最终选择了<mark class="label info">Vercel</mark></p>
+<span id="more"></span>
+<p>从同一时间测速的情况来看<mark class="label info">Vercel</mark>是最理想的</p>
+<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Github</a></li><li class="tab"><a href="#first-tab-2">netlify</a></li><li class="tab"><a href="#first-tab-3">vercel</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/github.png" class=""></div><div class="tab-pane" id="first-tab-2"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/netlify.png" class=""></div><div class="tab-pane" id="first-tab-3"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel.png" class=""></div></div></div>
+
+<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p><span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>的注册都非常简单，使用Github帐号即可注册与登录。<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel_reg.png" alt="vercel注册"></p>
+<h2 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h2><p>点击右上角的Add New选择Project<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/project.png" alt="project"><br>找到需要导入的项目并点击Import就可完成项目的导入</p>
+<h2 id="使用自定义域名访问"><a href="#使用自定义域名访问" class="headerlink" title="使用自定义域名访问"></a>使用自定义域名访问</h2><p>整个导入的过程很快，导入完成后进入到刚导入的项目，点击上方的Settings再点击右边的Domains，这时就能看到一个以项目名称开头的二级域名，这个域名很长不方便记忆，这时我们可以添加一个自定义域名。</p>
+<h3 id="添加域名解析"><a href="#添加域名解析" class="headerlink" title="添加域名解析"></a>添加域名解析</h3><p>先在域名解析商处添加一个CNAME记录。</p>
+<div class="note danger"><p>添加解析记录时，目标处要填入<strong>name-china.vercel-dns.com</strong>，这是官方专门为中国大陆优化过的</p>
+</div>
+<h3 id="添加自定义域名"><a href="#添加自定义域名" class="headerlink" title="添加自定义域名"></a>添加自定义域名</h3><p><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/domain.png" alt="domain"><br>在mywebsite.com处填入域名点击Add就完成了域名添加</p>
+<h3 id="二级域名跳转到自定义域名"><a href="#二级域名跳转到自定义域名" class="headerlink" title="二级域名跳转到自定义域名"></a>二级域名跳转到自定义域名</h3><p>点击二级域名旁的Edit，Redirect to处填入自定义域名，Status Code处选择308 Permanent Redirect<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/redirect.png" alt="redirect"></p>
+]]></content>
+      <tags>
+        <tag>Github Pages</tag>
+        <tag>优化</tag>
       </tags>
   </entry>
   <entry>
