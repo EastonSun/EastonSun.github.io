@@ -23,29 +23,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.eyunbook.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#f90303","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本地安装(Win11)安装前提在安装Hexo前，需要先安装以下程序  Node.js(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本) Git">
+    <meta name="description" content="Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win11搭建hexo并部署到GitHub">
-<meta property="og:url" content="https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/index.html">
+<meta property="og:title" content="Hexo添加标签页面">
+<meta property="og:url" content="https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/">
 <meta property="og:site_name" content="E云笔记">
-<meta property="og:description" content="本地安装(Win11)安装前提在安装Hexo前，需要先安装以下程序  Node.js(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本) Git">
+<meta property="og:description" content="Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-31T02:48:46.000Z">
-<meta property="article:modified_time" content="2024-08-11T08:05:33.199Z">
+<meta property="article:published_time" content="2024-08-11T06:37:56.000Z">
+<meta property="article:modified_time" content="2024-08-11T07:55:36.737Z">
 <meta property="article:author" content="Easton">
 <meta property="article:tag" content="hexo">
-<meta property="article:tag" content="github">
+<meta property="article:tag" content="标签页面">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/">
+<link rel="canonical" href="https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/","path":"2024/07/31/Win11搭建hexo并部署到GitHub/","title":"Win11搭建hexo并部署到GitHub"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/","path":"Hexo添加标签页面/","title":"Hexo添加标签页面"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Win11搭建hexo并部署到GitHub | E云笔记</title>
+<title>Hexo添加标签页面 | E云笔记</title>
   
 
 
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-Win11"><span class="nav-number">1.</span> <span class="nav-text">本地安装(Win11)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E6%8F%90"><span class="nav-number">1.1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">修改hexo配置文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E8%87%B3GitHub"><span class="nav-number">2.</span> <span class="nav-text">上传至GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">新建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="nav-number">2.2.</span> <span class="nav-text">部署到GitHub</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E4%B8%8E%E6%8F%92%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">主题与插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Next%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">Next安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-config-next-yml"><span class="nav-number">3.2.</span> <span class="nav-text">修改主题配置文件(_config.next.yml)</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E2%80%9D%E9%A1%B5%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">添加“标签”页面</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,13 +160,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/">
+    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -216,12 +216,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Win11搭建hexo并部署到GitHub | E云笔记">
+      <meta itemprop="name" content="Hexo添加标签页面 | E云笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Win11搭建hexo并部署到GitHub
+          Hexo添加标签页面
         </h1>
 
         <div class="post-meta-container">
@@ -231,15 +231,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-07-31 10:48:46" itemprop="dateCreated datePublished" datetime="2024-07-31T10:48:46+08:00">2024-07-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-08-11 16:05:33" itemprop="dateModified" datetime="2024-08-11T16:05:33+08:00">2024-08-11</time>
+      <time title="创建时间：2024-08-11 14:37:56 / 修改时间：15:55:36" itemprop="dateCreated datePublished" datetime="2024-08-11T14:37:56+08:00">2024-08-11</time>
     </span>
 
   
@@ -256,14 +250,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>978</span>
+      <span>229</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -273,74 +267,15 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h1><h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><p>在安装Hexo前，需要先安装以下程序</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span>(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本)</li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span><span id="more"></span>
-<strong>设置npm代理</strong><br>编辑”C:\Users\user\.npmrc”文件，添加以下内容：<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">https-proxy</span>=http://proxy-server-address:port</span><br><span class="line"><span class="attr">proxy</span>=http://proxy-server-address:port</span><br></pre></td></tr></table></figure>
-<strong>查看当前代理</strong><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="built_in">get</span> proxy</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>在电脑上新建一个文件夹，例如E:\hexo。进入该文夹在空白处点鼠标右键，选择Open Git Bash here，输入如下命令：</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
-<p>install -g命令是使用npm包管理工具进行全局安装，hexo-cli为hexo的客户端模块。<br>安装完成后，执行以下命令，Hexo会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">hexo init <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>cd <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>node-modules  依赖包</li>
-<li>public    存放生成的页面</li>
-<li>_config.yml   网站的配置文件</li>
-<li>package.json  应用程序信息</li>
-<li>scaffolds     模板文件夹</li>
-<li>source    资源文件夹</li>
-<li>thems     主题文件夹</li>
-</ul>
-<h2 id="修改hexo配置文件"><a href="#修改hexo配置文件" class="headerlink" title="修改hexo配置文件"></a>修改hexo配置文件</h2><p>hexo的配置文件位于站点根目录下，名字为：_config.yml，主要修改以下内容：</p>
-<ul>
-<li>title 网站标题</li>
-<li>subtitle  网站副标题</li>
-<li>description   网站描述</li>
-<li>keywords  网站关键字</li>
-<li>author    作者名字</li>
-<li>language  网站使用的语言，一般改为zh-CN</li>
-<li>timezone  网站时区，一般改为Asia&#x2F;Shanghai</li>
-<li>url   网站网址</li>
-<li>theme 主题名称，比如next</li>
-<li>post_asset_folder 设为true后，执行命令$hexo new post_name会在source&#x2F;_posts中生成和文章同名的文件夹，可以把图片等放到此文件夹中</li>
-<li>在post_asset_folder下面添加如下配置</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>这时<font color=red>![](image.png)</font>会被自动解析</p>
-<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvY29uZmlndXJhdGlvbg==">官网<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="上传至GitHub"><a href="#上传至GitHub" class="headerlink" title="上传至GitHub"></a>上传至GitHub</h1><h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>在GitHub个人主页新建一仓库，名称的前半部分为GitHub的用户名，后半部分为github.io<br>在git bash中输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;youremail&quot;</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
-<p>yourname,youremail分别为GitHub的用户名和注册邮箱<br>点击头像选择Settings，点击左侧栏里的SSH and GPG keys，打开C:\Users\user.ssh目录下的id_rsa.pub文件，把内容复制到SSH keys中</p>
-<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>打开blog目录下的_config.yml文件，找到文件末尾的Deployment添加以下内容：</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">    type:</span> git</span><br><span class="line"><span class="symbol">    repo:</span> https:<span class="comment">//github.com/username/username.github.io.git</span></span><br><span class="line"><span class="symbol">    branch:</span> main</span><br></pre></td></tr></table></figure>
-<p>在git bash中输入以下命令安装git部署工具：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h1 id="主题与插件"><a href="#主题与插件" class="headerlink" title="主题与插件"></a>主题与插件</h1><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=">官网<i class="fa fa-external-link-alt"></i></span>有很多的主题，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25leHQtdGhlbWUvaGV4by10aGVtZS1uZXh0">Next<i class="fa fa-external-link-alt"></i></span>一款很受欢迎的主题。</p>
-<h2 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h2><p>在blog目录下运行如下命令；</p>
-<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-<span class="keyword">next</span><span class="symbol">@latest</span></span><br></pre></td></tr></table></figure>
-<p>新建一个名为：_config.next.yml的空文件并运行如下命令：</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cp</span> node_modules/hexo-theme-<span class="keyword">next</span>/_config.yml _config.<span class="keyword">next</span>.yml</span><br></pre></td></tr></table></figure>
-<p>修改_config.yml将theme: landscape改为theme: next</p>
-<h2 id="修改主题配置文件-config-next-yml"><a href="#修改主题配置文件-config-next-yml" class="headerlink" title="修改主题配置文件(_config.next.yml)"></a>修改主题配置文件(_config.next.yml)</h2><ul>
-<li>Schemes   主题样式根据个人喜好选择，我个人喜欢Gemini</li>
-<li>Dark Mode     黑暗模式</li>
-<li>favicon   站点图标，使用自己的图标替换\hexo\blog\node_modules\hexo-theme-next\source\images下的文件</li>
-<li>menu  菜单栏，取消要启用的相关菜单注释即可，需要注意的是除home和archives外其它的页面都需手动创建</li>
-<li>sidebar   侧边栏，将display改为always</li>
-<li>avatar    头像，rounded设置为true头像为圆形，rotated设置为true，鼠标悬停头像会旋转</li>
-<li>excerpt-description   设为false使用&lt;!-- more –&gt;来分隔文章</li>
-<li>Post wordcount display setting：文章字数统计，要启用此插件必须先安装<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="built_in">word</span>-counter</span><br></pre></td></tr></table></figure></li>
-<li>codeblock：代码高亮，个人比较喜欢a11y-dark，更多的高亮主题请<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9oaWdobGlnaHQv">参考<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<div class="note info"><p>如果使用不蒜子计数统计，可修改\node_modules\hexo-theme-next\layout_third-party\statistics目录下的busuanzi-counter.njk文件，将</p>
-<figure class="highlight handlebars"><table><tr><td class="code"><pre><span class="line"><span class="language-xml">&lt;script</span><span class="template-variable">&#123;&#123; <span class="name">pjax</span> &#125;&#125;</span><span class="language-xml"> async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>修改为</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://vercount.one/js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+    <div class="post-body" itemprop="articleBody"><p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
+<h2 id="添加“标签”页面"><a href="#添加“标签”页面" class="headerlink" title="添加“标签”页面"></a>添加“标签”页面</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">添加新页面</a></li><li class="tab"><a href="#first-tab-2">设置页面类型</a></li><li class="tab"><a href="#first-tab-3">编辑菜单</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><p>在 <mark class="label primary">站点根目不下</mark> 鼠标右键点击<font style="background:black">Open Git Bash here</font>，使用命令<font style="background:black">hexo n page tags</font>创建一个新的<font style="background:black">tags</font>页面：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo n page tags</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><p>编辑新页面，将类型改为<font style="background:black">tags</font>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-3"><p>编辑 <mark class="label primary">NexT配置文件</mark> 下的<font style="background:black">menu</font>选项，将<font style="background:black">tags</font>前的注释取消：</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  home:</span> / || fa fa-home</span><br><span class="line"><span class="symbol">  archives:</span> <span class="keyword">/archives/</span> || fa fa-archive</span><br><span class="line"><span class="symbol">  tags:</span> <span class="keyword">/tags/</span> || fa fa-tags</span><br></pre></td></tr></table></figure></div></div></div>
 
-<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">官网文档<i class="fa fa-external-link-alt"></i></span>根据个人需要进行修改</p>
-
+<div class="note warning"><p>如果网站启用了评论系统，需要在新建的页面中禁用评论系统：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">itle:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+</div>
     </div>
 
     
@@ -357,7 +292,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/" title="Win11搭建hexo并部署到GitHub">https://www.eyunbook.com/2024/07/31/Win11搭建hexo并部署到GitHub/</a>
+      <a href="https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/" title="Hexo添加标签页面">https://www.eyunbook.com/Hexo添加标签页面/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -367,17 +302,20 @@
 
           <div class="post-tags">
               <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-              <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+              <a href="/tags/%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/" rel="tag"><i class="fa fa-tag"></i> 标签页面</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/" rel="prev" title="使用自定义域名访问GitHub Pages">
+                  <i class="fa fa-angle-left"></i> 使用自定义域名访问GitHub Pages
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/" rel="next" title="使用自定义域名访问GitHub Pages">
-                  使用自定义域名访问GitHub Pages <i class="fa fa-angle-right"></i>
+                <a href="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/" rel="next" title="优化Github Pages国内的访问速度">
+                  优化Github Pages国内的访问速度 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -410,14 +348,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">2k</span>
+    <span title="站点总字数">3k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -496,7 +434,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.eyunbook.com/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

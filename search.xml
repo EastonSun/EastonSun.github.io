@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo搜索引擎优化</title>
+    <url>/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<p>博客上线也有一个月了，查了一下Google和Bing两大搜索引擎，只有Google有收录Bing没有任何一条收录，于是对搜索引擎进行一下优化。</p>
+<span id="more"></span>
+<h2 id="安装和配置hexo-seo插件"><a href="#安装和配置hexo-seo插件" class="headerlink" title="安装和配置hexo-seo插件"></a>安装和配置hexo-seo插件</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> i hexo-seo</span><br></pre></td></tr></table></figure>
+<h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改<mark class="label info">_config.yml</mark>文件</h3><p>打开<mark class="label ">根目录</mark>的<mark class="label info">_config.yml</mark>文件，加入以下代码：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/dimaslanjaka/hexo-seo</span></span><br><span class="line"><span class="attr">seo:</span></span><br><span class="line">  <span class="comment"># minify html</span></span><br><span class="line">  <span class="attr">html:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># fix invalid html</span></span><br><span class="line">    <span class="attr">fix:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># exclude from minify</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;*.min.&#123;htm,html&#125;&quot;</span></span><br><span class="line">  <span class="comment"># minify css</span></span><br><span class="line">  <span class="attr">css:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># If you want to customize the css minifier settings, you can put below</span></span><br><span class="line">    <span class="comment"># exclude css from minifying, multiple supported</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;**/*.min.css&quot;</span></span><br><span class="line">  <span class="comment"># minify js</span></span><br><span class="line">  <span class="attr">js:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># concatenate all js into one tag</span></span><br><span class="line">    <span class="comment">## WARNING: DO NOT USING ANOTHER MINIFIER PLUGIN</span></span><br><span class="line">    <span class="attr">concat:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># If you want to customize the js minifier settings, you can put below</span></span><br><span class="line">    <span class="comment"># exclude css from minifying, multiple supported</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;**/*.min.js&quot;</span></span><br><span class="line">    <span class="comment"># this is terser options, you can customize minifier with terser options https://github.com/terser/terser</span></span><br><span class="line">    <span class="comment"># below is config example</span></span><br><span class="line">    <span class="attr">options:</span></span><br><span class="line">      <span class="attr">compress:</span></span><br><span class="line">        <span class="attr">dead_code:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">mangle:</span></span><br><span class="line">        <span class="attr">toplevel:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">safari10:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># add rich snippets on every posts and pages</span></span><br><span class="line">  <span class="attr">schema:</span></span><br><span class="line">    <span class="attr">article:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">breadcrumb:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># this function still under development because JAVASCRIPT HEAP MEMORY and my device is 8GB RAM</span></span><br><span class="line">  <span class="attr">img:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># fix broken images</span></span><br><span class="line">    <span class="attr">broken:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># default broken images</span></span><br><span class="line">    <span class="attr">default:</span> <span class="string">https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg</span></span><br><span class="line">    <span class="comment"># broken images methods</span></span><br><span class="line">    <span class="comment"># serverside : process broken images from server side (caused javascript heap out of memory, if your post large and your device has insufficient memory)</span></span><br><span class="line">    <span class="comment"># clientside : process broken image from client side browser with webjs</span></span><br><span class="line">    <span class="attr">onerror:</span> <span class="string">serverside</span></span><br><span class="line">  <span class="comment"># external links fix</span></span><br><span class="line">  <span class="attr">links:</span></span><br><span class="line">    <span class="comment"># enable or false</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># allowed following links, otherwise nofollow others</span></span><br><span class="line">  <span class="comment"># auto generate seo friendly sitemap on http://yoursite.com/sitemap.xml</span></span><br><span class="line">  <span class="comment"># forked from yoast seo</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>将<font style="background:black">permalink:</font>修改为<font style="background:blue">:title&#x2F;</font>，将<font style="background:black">trailing_index:</font>修改为<font style="background:blue">false</font></p>
+]]></content>
+      <tags>
+        <tag>seo优化</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo添加标签页面</title>
-    <url>/2024/08/11/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/</url>
+    <url>/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2/</url>
     <content><![CDATA[<p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
 <h2 id="添加“标签”页面"><a href="#添加“标签”页面" class="headerlink" title="添加“标签”页面"></a>添加“标签”页面</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">添加新页面</a></li><li class="tab"><a href="#first-tab-2">设置页面类型</a></li><li class="tab"><a href="#first-tab-3">编辑菜单</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><p>在 <mark class="label primary">站点根目不下</mark> 鼠标右键点击<font style="background:black">Open Git Bash here</font>，使用命令<font style="background:black">hexo n page tags</font>创建一个新的<font style="background:black">tags</font>页面：</p>
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo n page tags</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><p>编辑新页面，将类型改为<font style="background:black">tags</font>：</p>
@@ -19,7 +34,7 @@
   </entry>
   <entry>
     <title>Win11搭建hexo并部署到GitHub</title>
-    <url>/2024/07/31/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/</url>
+    <url>/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub/</url>
     <content><![CDATA[<h1 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h1><h2 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h2><p>在安装Hexo前，需要先安装以下程序</p>
 <ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span>(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本)</li>
@@ -95,7 +110,7 @@
   </entry>
   <entry>
     <title>hexo 启用Vercel的Web Analytics</title>
-    <url>/2024/08/28/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/</url>
+    <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/</url>
     <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
 <div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="/images/logo.png"></object>
@@ -104,7 +119,7 @@
 </div></div>
 <mark class="label info">Vercle</mark>还提供了<mark class="label primary">Web Analytics</mark>功能
 <span id="more"></span>
-<h2 id="开启Web-Analytics"><a href="#开启Web-Analytics" class="headerlink" title="开启Web Analytics"></a>开启Web Analytics</h2><p>在<mark class="label info">Vercel</mark>仪表盘点点击进入已部署好的博客项目，点击上方导航栏的<mark class="label ">Analytics</mark>在新的页面中点击<mark class="label ">Web Analytics</mark>下方的<mark class="label success">Enable</mark>，在弹出的页面中选择免费计划并点击<mark class="label success">Enable</mark><br><img data-src="/2024/08/28/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/analytics.png" alt="analytics"><br><img data-src="/2024/08/28/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/enable.png" alt="enable"></p>
+<h2 id="开启Web-Analytics"><a href="#开启Web-Analytics" class="headerlink" title="开启Web Analytics"></a>开启Web Analytics</h2><p>在<mark class="label info">Vercel</mark>仪表盘点点击进入已部署好的博客项目，点击上方导航栏的<mark class="label ">Analytics</mark>在新的页面中点击<mark class="label ">Web Analytics</mark>下方的<mark class="label success">Enable</mark>，在弹出的页面中选择免费计划并点击<mark class="label success">Enable</mark><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/analytics.png" alt="analytics"><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/enable.png" alt="enable"></p>
 <h2 id="将script添加到Hexo"><a href="#将script添加到Hexo" class="headerlink" title="将script添加到Hexo"></a>将script添加到Hexo</h2><p>在<mark class="label info">\blog\node_modules\hexo-theme-next\scripts\filters</mark>目录下新建<mark class="label ">vercel_analytics.js</mark>文件并复制以下代码到文件中保存</p>
 <figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">hexo.extend.<span class="built_in">filter</span>.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="keyword">function</span>(<span class="params">injects</span>) &#123;</span><br><span class="line">    injects.bodyEnd.raw(<span class="string">&#x27;vercel-analytics-js&#x27;</span>, <span class="string">&#x27;&lt;script defer src=&quot;/_vercel/insights/script.js&quot;&gt;&lt;/script&gt;&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 <p>重新部署后稍等一会就能看到Web Analytics数据</p>
@@ -117,7 +132,7 @@
   </entry>
   <entry>
     <title>为Git Bash配置代理</title>
-    <url>/2024/08/27/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
+    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86/</url>
     <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
 <span id="more"></span>
 <h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
@@ -131,7 +146,7 @@
   </entry>
   <entry>
     <title>优化Github Pages国内的访问速度</title>
-    <url>/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/</url>
+    <url>/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/</url>
     <content><![CDATA[<p>本博客托管在Github Pages上，简单方便快捷唯一不好的就是国内访问速度不好，甚至有时出现访问不了的情况。</p>
 <div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="/images/logo.png"></object>
@@ -141,16 +156,16 @@
 <p>网上有众多的解决方案，能够白嫖的也就是<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>，经过对比后我最终选择了<mark class="label info">Vercel</mark></p>
 <span id="more"></span>
 <p>从同一时间测速的情况来看<mark class="label info">Vercel</mark>是最理想的</p>
-<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Github</a></li><li class="tab"><a href="#first-tab-2">netlify</a></li><li class="tab"><a href="#first-tab-3">vercel</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/github.png" class=""></div><div class="tab-pane" id="first-tab-2"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/netlify.png" class=""></div><div class="tab-pane" id="first-tab-3"><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel.png" class=""></div></div></div>
+<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Github</a></li><li class="tab"><a href="#first-tab-2">netlify</a></li><li class="tab"><a href="#first-tab-3">vercel</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/github.png" class=""></div><div class="tab-pane" id="first-tab-2"><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/netlify.png" class=""></div><div class="tab-pane" id="first-tab-3"><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel.png" class=""></div></div></div>
 
-<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p><span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>的注册都非常简单，使用Github帐号即可注册与登录。<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel_reg.png" alt="vercel注册"></p>
-<h2 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h2><p>点击右上角的Add New选择Project<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/project.png" alt="project"><br>找到需要导入的项目并点击Import就可完成项目的导入</p>
+<h2 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h2><p><span class="exturl" data-url="aHR0cHM6Ly92ZXJjZWwuY29tLw==">Vercel<i class="fa fa-external-link-alt"></i></span>和<span class="exturl" data-url="aHR0cHM6Ly9hcHAubmV0bGlmeS5jb20v">Netlify<i class="fa fa-external-link-alt"></i></span>的注册都非常简单，使用Github帐号即可注册与登录。<br><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/vercel_reg.png" alt="vercel注册"></p>
+<h2 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h2><p>点击右上角的Add New选择Project<br><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/project.png" alt="project"><br>找到需要导入的项目并点击Import就可完成项目的导入</p>
 <h2 id="使用自定义域名访问"><a href="#使用自定义域名访问" class="headerlink" title="使用自定义域名访问"></a>使用自定义域名访问</h2><p>整个导入的过程很快，导入完成后进入到刚导入的项目，点击上方的Settings再点击右边的Domains，这时就能看到一个以项目名称开头的二级域名，这个域名很长不方便记忆，这时我们可以添加一个自定义域名。</p>
 <h3 id="添加域名解析"><a href="#添加域名解析" class="headerlink" title="添加域名解析"></a>添加域名解析</h3><p>先在域名解析商处添加一个CNAME记录。</p>
 <div class="note danger"><p>添加解析记录时，目标处要填入<strong>name-china.vercel-dns.com</strong>，这是官方专门为中国大陆优化过的</p>
 </div>
-<h3 id="添加自定义域名"><a href="#添加自定义域名" class="headerlink" title="添加自定义域名"></a>添加自定义域名</h3><p><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/domain.png" alt="domain"><br>在mywebsite.com处填入域名点击Add就完成了域名添加</p>
-<h3 id="二级域名跳转到自定义域名"><a href="#二级域名跳转到自定义域名" class="headerlink" title="二级域名跳转到自定义域名"></a>二级域名跳转到自定义域名</h3><p>点击二级域名旁的Edit，Redirect to处填入自定义域名，Status Code处选择308 Permanent Redirect<br><img data-src="/2024/08/26/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/redirect.png" alt="redirect"></p>
+<h3 id="添加自定义域名"><a href="#添加自定义域名" class="headerlink" title="添加自定义域名"></a>添加自定义域名</h3><p><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/domain.png" alt="domain"><br>在mywebsite.com处填入域名点击Add就完成了域名添加</p>
+<h3 id="二级域名跳转到自定义域名"><a href="#二级域名跳转到自定义域名" class="headerlink" title="二级域名跳转到自定义域名"></a>二级域名跳转到自定义域名</h3><p>点击二级域名旁的Edit，Redirect to处填入自定义域名，Status Code处选择308 Permanent Redirect<br><img data-src="/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6/redirect.png" alt="redirect"></p>
 ]]></content>
       <tags>
         <tag>Github Pages</tag>
@@ -159,10 +174,10 @@
   </entry>
   <entry>
     <title>使用自定义域名访问GitHub Pages</title>
-    <url>/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/</url>
+    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/</url>
     <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
 <h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
-<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
+<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
 <ul>
 <li>IPv4</li>
 </ul>
@@ -177,7 +192,7 @@
 <li>在左边栏找到Code and automation，点击下方的Pages</li>
 <li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
 </ul>
-<p><img data-src="/2024/08/05/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
+<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
 ]]></content>
       <tags>
         <tag>github pages</tag>
