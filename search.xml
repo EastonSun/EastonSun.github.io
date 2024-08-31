@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo搜索引擎优化</title>
-    <url>/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96.html</url>
-    <content><![CDATA[<p>博客上线也有一个月了，查了一下Google和Bing两大搜索引擎，只有Google有收录Bing没有任何一条收录，于是对搜索引擎进行一下优化。</p>
-<span id="more"></span>
-<h2 id="安装插件和配置"><a href="#安装插件和配置" class="headerlink" title="安装插件和配置"></a>安装<mark class="label ">hexo-generator-sitemap</mark>插件和配置<mark class="label info">_config.yml</mark></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改<mark class="label info">_config.yml</mark>文件</h3><p>打开<mark class="label ">根目录</mark>的<mark class="label info">_config.yml</mark>文件，加入以下代码：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># common sitemap for all the search engines</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p>将<font style="background:black">permalink:</font>修改为<font style="background:blue">:title.html</font>，将<font style="background:black">trailing_index:</font>修改为<font style="background:blue">false</font></p>
-<h2 id="向Google提交站点地图"><a href="#向Google提交站点地图" class="headerlink" title="向Google提交站点地图"></a>向Google提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbS9zZWFyY2gtY29uc29sZS8=">Google Search Console<i class="fa fa-external-link-alt"></i></span>，箭头处填入域名<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitename.png" alt="填入域名"><br>选择<mark class="label ">HTML标记认证</mark>，将会得到<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">&lt;meta name<span class="operator">=</span><span class="string">&quot;google-site-verification&quot;</span> content<span class="operator">=</span><span class="string">&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>复制<font style="background:black">XXXXXXXXXXXXXXXXXXXXXXX</font>的值，将其粘贴到<mark class="label ">_config.next.yml</mark>的<mark class="label info">google_site_verification:</mark><br>运行<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="variable">&amp;&amp;</span> hexo g <span class="variable">&amp;&amp;</span> hexo d</span><br></pre></td></tr></table></figure>后点击验证<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/verify.png" alt="验证"><br>在弹出的对话框中点击<mark class="label info">前往资源页面</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/verify_ok.png" alt="验证完成"><br>点击左侧的<mark class="label ">站点地图</mark>，在添加新的站点地图处填入<mark class="label info">sitemap.xml</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitemap.png" alt="sitemap"></p>
-<h2 id="向Bing提交站点地图"><a href="#向Bing提交站点地图" class="headerlink" title="向Bing提交站点地图"></a>向Bing提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vd2VibWFzdGVycw==">Bing Webmasters<i class="fa fa-external-link-alt"></i></span>登录后选择<mark class="label success">从GSC导入你的网站</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/bing.png" alt="bing"></p>
-<h2 id="使用IndexNow快速提交至Bing"><a href="#使用IndexNow快速提交至Bing" class="headerlink" title="使用IndexNow快速提交至Bing"></a>使用IndexNow快速提交至Bing</h2><h3 id="安装hexo-indexnow插件"><a href="#安装hexo-indexnow插件" class="headerlink" title="安装hexo-indexnow插件"></a>安装hexo-indexnow插件</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-indexnow <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h3 id="获取API-Key"><a href="#获取API-Key" class="headerlink" title="获取API Key"></a>获取API Key</h3><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vaW5kZXhub3cvZ2V0c3RhcnRlZA==">Bing IndexNow<i class="fa fa-external-link-alt"></i></span>，找到API Key并复制下来</p>
-<h3 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h3><p>将以下代码复制到根目录的<mark class="label _config.yml"></mark></p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">hexo_indexnow:</span></span><br><span class="line"><span class="symbol">  count:</span> latest <span class="meta"># 数字或者 <span class="string">&quot;latest&quot;</span>(=1)</span></span><br><span class="line"><span class="symbol">  txt_name:</span> indexnow.txt <span class="meta"># 链接文件名</span></span><br><span class="line"><span class="symbol">  apikey:</span> xxxxxx <span class="meta"># 你的 apikey</span></span><br><span class="line"><span class="symbol">  server:</span> bing <span class="meta"># indexnow 服务器，可选值有:bing、yandex、indexnow</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  - type: indexnow_url_submitter</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>seo优化</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo添加标签页面</title>
     <url>/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html</url>
     <content><![CDATA[<p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
@@ -35,6 +15,26 @@
       <tags>
         <tag>hexo</tag>
         <tag>标签页面</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo搜索引擎优化</title>
+    <url>/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96.html</url>
+    <content><![CDATA[<p>博客上线也有一个月了，查了一下Google和Bing两大搜索引擎，只有Google有收录Bing没有任何一条收录，于是对搜索引擎进行一下优化。</p>
+<span id="more"></span>
+<h2 id="安装插件和配置"><a href="#安装插件和配置" class="headerlink" title="安装插件和配置"></a>安装<mark class="label ">hexo-generator-sitemap</mark>插件和配置<mark class="label info">_config.yml</mark></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改<mark class="label info">_config.yml</mark>文件</h3><p>打开<mark class="label ">根目录</mark>的<mark class="label info">_config.yml</mark>文件，加入以下代码：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># common sitemap for all the search engines</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>将<font style="background:black">permalink:</font>修改为<font style="background:blue">:title.html</font>，将<font style="background:black">trailing_index:</font>修改为<font style="background:blue">false</font></p>
+<h2 id="向Google提交站点地图"><a href="#向Google提交站点地图" class="headerlink" title="向Google提交站点地图"></a>向Google提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbS9zZWFyY2gtY29uc29sZS8=">Google Search Console<i class="fa fa-external-link-alt"></i></span>，箭头处填入域名<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitename.png" alt="填入域名"><br>选择<mark class="label ">HTML标记认证</mark>，将会得到<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">&lt;meta name<span class="operator">=</span><span class="string">&quot;google-site-verification&quot;</span> content<span class="operator">=</span><span class="string">&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>复制<font style="background:black">XXXXXXXXXXXXXXXXXXXXXXX</font>的值，将其粘贴到<mark class="label ">_config.next.yml</mark>的<mark class="label info">google_site_verification:</mark><br>运行<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="variable">&amp;&amp;</span> hexo g <span class="variable">&amp;&amp;</span> hexo d</span><br></pre></td></tr></table></figure>后点击验证<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/verify.png" alt="验证"><br>在弹出的对话框中点击<mark class="label info">前往资源页面</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/verify_ok.png" alt="验证完成"><br>点击左侧的<mark class="label ">站点地图</mark>，在添加新的站点地图处填入<mark class="label info">sitemap.xml</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitemap.png" alt="sitemap"></p>
+<h2 id="向Bing提交站点地图"><a href="#向Bing提交站点地图" class="headerlink" title="向Bing提交站点地图"></a>向Bing提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vd2VibWFzdGVycw==">Bing Webmasters<i class="fa fa-external-link-alt"></i></span>登录后选择<mark class="label success">从GSC导入你的网站</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/bing.png" alt="bing"></p>
+<h2 id="使用IndexNow快速提交至Bing"><a href="#使用IndexNow快速提交至Bing" class="headerlink" title="使用IndexNow快速提交至Bing"></a>使用IndexNow快速提交至Bing</h2><h3 id="安装hexo-indexnow插件"><a href="#安装hexo-indexnow插件" class="headerlink" title="安装hexo-indexnow插件"></a>安装hexo-indexnow插件</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-indexnow <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h3 id="获取API-Key"><a href="#获取API-Key" class="headerlink" title="获取API Key"></a>获取API Key</h3><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vaW5kZXhub3cvZ2V0c3RhcnRlZA==">Bing IndexNow<i class="fa fa-external-link-alt"></i></span>，找到API Key并复制下来</p>
+<h3 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h3><p>将以下代码复制到根目录的<mark class="label ">_config.yml</mark></p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">hexo_indexnow:</span></span><br><span class="line"><span class="symbol">  count:</span> latest <span class="meta"># 数字或者 <span class="string">&quot;latest&quot;</span>(=1)</span></span><br><span class="line"><span class="symbol">  txt_name:</span> indexnow.txt <span class="meta"># 链接文件名</span></span><br><span class="line"><span class="symbol">  apikey:</span> xxxxxx <span class="meta"># 你的 apikey</span></span><br><span class="line"><span class="symbol">  server:</span> bing <span class="meta"># indexnow 服务器，可选值有:bing、yandex、indexnow</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  - type: indexnow_url_submitter</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>seo优化</tag>
       </tags>
   </entry>
   <entry>
@@ -114,6 +114,20 @@
       </tags>
   </entry>
   <entry>
+    <title>为Git Bash配置代理</title>
+    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
+    <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
+<span id="more"></span>
+<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
+<div class="note warning"><p><strong>将端口号换成自己的代理端口</strong></p>
+</div>
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>git bash</tag>
+        <tag>代理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo 启用Vercel的Web Analytics</title>
     <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
     <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
@@ -133,20 +147,6 @@
       <tags>
         <tag>vercel</tag>
         <tag>web analytics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为Git Bash配置代理</title>
-    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
-    <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
-<span id="more"></span>
-<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
-<div class="note warning"><p><strong>将端口号换成自己的代理端口</strong></p>
-</div>
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>git bash</tag>
-        <tag>代理</tag>
       </tags>
   </entry>
   <entry>
