@@ -109,20 +109,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为Git Bash配置代理</title>
-    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
-    <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
-<span id="more"></span>
-<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
-<div class="note warning"><p><strong>将端口号换成自己的代理端口</strong></p>
-</div>
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>git bash</tag>
-        <tag>代理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo 启用Vercel的Web Analytics</title>
     <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
     <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
@@ -142,6 +128,20 @@
       <tags>
         <tag>vercel</tag>
         <tag>web analytics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为Git Bash配置代理</title>
+    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
+    <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
+<span id="more"></span>
+<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
+<div class="note warning"><p><strong>将端口号换成自己的代理端口</strong></p>
+</div>
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>git bash</tag>
+        <tag>代理</tag>
       </tags>
   </entry>
   <entry>
