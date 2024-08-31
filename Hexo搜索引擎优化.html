@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="eLljGCPb5osaBJHjFd2ZgTyhN8SYHK_i-xkAkttUU3Q">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -30,12 +31,14 @@
 <meta property="og:site_name" content="E云笔记">
 <meta property="og:description" content="博客上线也有一个月了，查了一下Google和Bing两大搜索引擎，只有Google有收录Bing没有任何一条收录，于是对搜索引擎进行一下优化。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.eyunbook.com/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitename.png">
 <meta property="article:published_time" content="2024-08-31T08:34:18.000Z">
-<meta property="article:modified_time" content="2024-08-31T09:28:39.386Z">
+<meta property="article:modified_time" content="2024-08-31T10:36:25.592Z">
 <meta property="article:author" content="Easton">
 <meta property="article:tag" content="seo优化">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.eyunbook.com/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitename.png">
 
 
 <link rel="canonical" href="https://www.eyunbook.com/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96.html">
@@ -145,7 +148,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AEhexo-seo%E6%8F%92%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">安装和配置hexo-seo插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">修改_config.yml文件</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">安装hexo-generator-sitemap插件和配置_config.yml</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">修改_config.yml文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91Google%E6%8F%90%E4%BA%A4%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE"><span class="nav-number">2.</span> <span class="nav-text">向Google提交站点地图</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -233,7 +236,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-08-31 16:34:18 / 修改时间：17:28:39" itemprop="dateCreated datePublished" datetime="2024-08-31T16:34:18+08:00">2024-08-31</time>
+      <time title="创建时间：2024-08-31 16:34:18 / 修改时间：18:36:25" itemprop="dateCreated datePublished" datetime="2024-08-31T16:34:18+08:00">2024-08-31</time>
     </span>
 
   
@@ -250,7 +253,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>361</span>
+      <span>210</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -269,10 +272,11 @@
     
     <div class="post-body" itemprop="articleBody"><p>博客上线也有一个月了，查了一下Google和Bing两大搜索引擎，只有Google有收录Bing没有任何一条收录，于是对搜索引擎进行一下优化。</p>
 <span id="more"></span>
-<h2 id="安装和配置hexo-seo插件"><a href="#安装和配置hexo-seo插件" class="headerlink" title="安装和配置hexo-seo插件"></a>安装和配置hexo-seo插件</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">npm</span> i hexo-seo</span><br></pre></td></tr></table></figure>
+<h2 id="安装插件和配置"><a href="#安装插件和配置" class="headerlink" title="安装插件和配置"></a>安装<mark class="label ">hexo-generator-sitemap</mark>插件和配置<mark class="label info">_config.yml</mark></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
 <h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改<mark class="label info">_config.yml</mark>文件</h3><p>打开<mark class="label ">根目录</mark>的<mark class="label info">_config.yml</mark>文件，加入以下代码：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># https://github.com/dimaslanjaka/hexo-seo</span></span><br><span class="line"><span class="attr">seo:</span></span><br><span class="line">  <span class="comment"># minify html</span></span><br><span class="line">  <span class="attr">html:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># fix invalid html</span></span><br><span class="line">    <span class="attr">fix:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># exclude from minify</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;*.min.&#123;htm,html&#125;&quot;</span></span><br><span class="line">  <span class="comment"># minify css</span></span><br><span class="line">  <span class="attr">css:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># If you want to customize the css minifier settings, you can put below</span></span><br><span class="line">    <span class="comment"># exclude css from minifying, multiple supported</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;**/*.min.css&quot;</span></span><br><span class="line">  <span class="comment"># minify js</span></span><br><span class="line">  <span class="attr">js:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># concatenate all js into one tag</span></span><br><span class="line">    <span class="comment">## WARNING: DO NOT USING ANOTHER MINIFIER PLUGIN</span></span><br><span class="line">    <span class="attr">concat:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># If you want to customize the js minifier settings, you can put below</span></span><br><span class="line">    <span class="comment"># exclude css from minifying, multiple supported</span></span><br><span class="line">    <span class="attr">exclude:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;**/*.min.js&quot;</span></span><br><span class="line">    <span class="comment"># this is terser options, you can customize minifier with terser options https://github.com/terser/terser</span></span><br><span class="line">    <span class="comment"># below is config example</span></span><br><span class="line">    <span class="attr">options:</span></span><br><span class="line">      <span class="attr">compress:</span></span><br><span class="line">        <span class="attr">dead_code:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">mangle:</span></span><br><span class="line">        <span class="attr">toplevel:</span> <span class="literal">true</span></span><br><span class="line">        <span class="attr">safari10:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># add rich snippets on every posts and pages</span></span><br><span class="line">  <span class="attr">schema:</span></span><br><span class="line">    <span class="attr">article:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">breadcrumb:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># this function still under development because JAVASCRIPT HEAP MEMORY and my device is 8GB RAM</span></span><br><span class="line">  <span class="attr">img:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># fix broken images</span></span><br><span class="line">    <span class="attr">broken:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment"># default broken images</span></span><br><span class="line">    <span class="attr">default:</span> <span class="string">https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg</span></span><br><span class="line">    <span class="comment"># broken images methods</span></span><br><span class="line">    <span class="comment"># serverside : process broken images from server side (caused javascript heap out of memory, if your post large and your device has insufficient memory)</span></span><br><span class="line">    <span class="comment"># clientside : process broken image from client side browser with webjs</span></span><br><span class="line">    <span class="attr">onerror:</span> <span class="string">serverside</span></span><br><span class="line">  <span class="comment"># external links fix</span></span><br><span class="line">  <span class="attr">links:</span></span><br><span class="line">    <span class="comment"># enable or false</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># allowed following links, otherwise nofollow others</span></span><br><span class="line">  <span class="comment"># auto generate seo friendly sitemap on http://yoursite.com/sitemap.xml</span></span><br><span class="line">  <span class="comment"># forked from yoast seo</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># common sitemap for all the search engines</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p>将<font style="background:black">permalink:</font>修改为<font style="background:blue">:title.html</font>，将<font style="background:black">trailing_index:</font>修改为<font style="background:blue">false</font></p>
+<h2 id="向Google提交站点地图"><a href="#向Google提交站点地图" class="headerlink" title="向Google提交站点地图"></a>向Google提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbS9zZWFyY2gtY29uc29sZS8=">Google Search Console<i class="fa fa-external-link-alt"></i></span>，箭头处填入域名<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitename.png" alt="填入域名"><br>选择<mark class="label ">HTML标记认证</mark>，将会得到<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">&lt;meta name<span class="operator">=</span><span class="string">&quot;google-site-verification&quot;</span> content<span class="operator">=</span><span class="string">&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>复制<font style="background:black">XXXXXXXXXXXXXXXXXXXXXXX</font>的值，将其粘贴到<mark class="label ">_config.next.yml</mark>的<mark class="label info">google_site_verification:</mark></p>
 
     </div>
 
@@ -343,14 +347,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">3k</span>
+    <span title="站点总字数">2k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
