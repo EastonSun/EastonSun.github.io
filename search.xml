@@ -12,9 +12,11 @@
 <h2 id="向Google提交站点地图"><a href="#向Google提交站点地图" class="headerlink" title="向Google提交站点地图"></a>向Google提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbS9zZWFyY2gtY29uc29sZS8=">Google Search Console<i class="fa fa-external-link-alt"></i></span>，箭头处填入域名<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitename.png" alt="填入域名"><br>选择<mark class="label ">HTML标记认证</mark>，将会得到<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">&lt;meta name<span class="operator">=</span><span class="string">&quot;google-site-verification&quot;</span> content<span class="operator">=</span><span class="string">&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>复制<font style="background:black">XXXXXXXXXXXXXXXXXXXXXXX</font>的值，将其粘贴到<mark class="label ">_config.next.yml</mark>的<mark class="label info">google_site_verification:</mark><br>运行<figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">hexo clean <span class="variable">&amp;&amp;</span> hexo g <span class="variable">&amp;&amp;</span> hexo d</span><br></pre></td></tr></table></figure>后点击验证<br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/verify.png" alt="验证"><br>在弹出的对话框中点击<mark class="label info">前往资源页面</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/verify_ok.png" alt="验证完成"><br>点击左侧的<mark class="label ">站点地图</mark>，在添加新的站点地图处填入<mark class="label info">sitemap.xml</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/sitemap.png" alt="sitemap"></p>
 <h2 id="向Bing提交站点地图"><a href="#向Bing提交站点地图" class="headerlink" title="向Bing提交站点地图"></a>向Bing提交站点地图</h2><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vd2VibWFzdGVycw==">Bing Webmasters<i class="fa fa-external-link-alt"></i></span>登录后选择<mark class="label success">从GSC导入你的网站</mark><br><img data-src="/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96/bing.png" alt="bing"></p>
 <h2 id="使用IndexNow快速提交至Bing"><a href="#使用IndexNow快速提交至Bing" class="headerlink" title="使用IndexNow快速提交至Bing"></a>使用IndexNow快速提交至Bing</h2><h3 id="安装hexo-indexnow插件"><a href="#安装hexo-indexnow插件" class="headerlink" title="安装hexo-indexnow插件"></a>安装hexo-indexnow插件</h3><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-indexnow <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h3 id="获取API-Key"><a href="#获取API-Key" class="headerlink" title="获取API Key"></a>获取API Key</h3><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vaW5kZXhub3cvZ2V0c3RhcnRlZA==">Bing IndexNow<i class="fa fa-external-link-alt"></i></span>，找到API Key并复制下来</p>
+<h3 id="获取API-Key"><a href="#获取API-Key" class="headerlink" title="获取API Key"></a>获取API Key</h3><p>打开<span class="exturl" data-url="aHR0cHM6Ly93d3cuYmluZy5jb20vaW5kZXhub3cvZ2V0c3RhcnRlZA==">Bing IndexNow<i class="fa fa-external-link-alt"></i></span>，找到API Key点击下载箭头将文件下载到<mark class="label info">/source</mark>目录并复制API Key</p>
 <h3 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h3><p>将以下代码复制到根目录的<mark class="label ">_config.yml</mark></p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">hexo_indexnow:</span></span><br><span class="line"><span class="symbol">  count:</span> latest <span class="meta"># 数字或者 <span class="string">&quot;latest&quot;</span>(=1)</span></span><br><span class="line"><span class="symbol">  txt_name:</span> indexnow.txt <span class="meta"># 链接文件名</span></span><br><span class="line"><span class="symbol">  apikey:</span> xxxxxx <span class="meta"># 你的 apikey</span></span><br><span class="line"><span class="symbol">  server:</span> bing <span class="meta"># indexnow 服务器，可选值有:bing、yandex、indexnow</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  - type: indexnow_url_submitter</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">hexo_indexnow:</span></span><br><span class="line"><span class="symbol">  count:</span> latest <span class="meta"># 数字或者 <span class="string">&quot;latest&quot;</span>(=1)</span></span><br><span class="line"><span class="symbol">  txt_name:</span> indexnow.txt <span class="meta"># 链接文件名</span></span><br><span class="line"><span class="symbol">  apikey:</span> xxxxxx <span class="meta"># 你的 apikey</span></span><br><span class="line"><span class="symbol">  server:</span> bing <span class="meta"># indexnow 服务器，可选值有:bing、yandex、indexnow</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">deploy:</span></span><br><span class="line">  - type: indexnow_url_submitter</span><br></pre></td></tr></table></figure>
+<h2 id="设置robots"><a href="#设置robots" class="headerlink" title="设置robots"></a>设置robots</h2><p>在<mark class="label info">/source</mark>目录下新建<mark class="label danger">robots.txt</mark>文件，将下列代码复制到文件中</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line"><span class="symbol">Allow:</span> /</span><br><span class="line"><span class="symbol">Allow:</span> <span class="keyword">/archives/</span></span><br><span class="line"><span class="symbol">Allow:</span> <span class="keyword">/categories/</span></span><br><span class="line"><span class="symbol">Allow:</span> <span class="keyword">/tags/</span></span><br><span class="line"><span class="symbol">Allow:</span> <span class="keyword">/about/</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="keyword">/vendors/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="keyword">/js/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="keyword">/css/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="keyword">/fonts/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="keyword">/fancybox/</span></span><br><span class="line"><span class="symbol"></span></span><br><span class="line"><span class="symbol">Sitemap:</span> https:<span class="comment">//www.eyunbook.com/sitemap.xml</span></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>seo优化</tag>
         <tag>hexo-generator-sitemap</tag>
@@ -137,20 +139,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为Git Bash配置代理</title>
-    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
-    <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
-<span id="more"></span>
-<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
-<div class="note warning"><p><strong>将端口号换成自己的代理端口</strong></p>
-</div>
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>git bash</tag>
-        <tag>代理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>优化Github Pages国内的访问速度</title>
     <url>/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6.html</url>
     <content><![CDATA[<p>本博客托管在Github Pages上，简单方便快捷唯一不好的就是国内访问速度不好，甚至有时出现访问不了的情况。</p>
@@ -176,6 +164,20 @@
       <tags>
         <tag>Github Pages</tag>
         <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为Git Bash配置代理</title>
+    <url>/%E4%B8%BAGit-Bash%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86.html</url>
+    <content><![CDATA[<p>在国内访问Git的速度非常慢，将博客上传到Github时经常报错<mark class="label warning">fatal: unable to access https://github.com/EastonSun/EastonSun.github.io.git/: Failed to connect to github.com port 443 after 21174 ms: Could not connect to server</mark>，为<mark class="label info">Git Bash</mark>配置代理后错误消失。</p>
+<span id="more"></span>
+<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> http<span class="selector-class">.proxy</span> http:<span class="comment">//127.0.0.1:10801</span></span><br><span class="line">git config <span class="attr">--global</span> https<span class="selector-class">.proxy</span> https:<span class="comment">//127.0.0.1:10801</span></span><br></pre></td></tr></table></figure>
+<div class="note warning"><p><strong>将端口号换成自己的代理端口</strong></p>
+</div>
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> http<span class="selector-class">.proxy</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--unset</span> https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>git bash</tag>
+        <tag>代理</tag>
       </tags>
   </entry>
   <entry>
