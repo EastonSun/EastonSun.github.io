@@ -206,4 +206,31 @@
         <tag>github pages</tag>
       </tags>
   </entry>
+  <entry>
+    <title>浏览器关闭QUIC协议</title>
+    <url>/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE.html</url>
+    <content><![CDATA[<mark class="label ">QUIC</mark>(Quick UDP Internet Connection)是一个通用的传输层网络协议，由<mark class="label info">Google</mark>公司的<mark class="label primary">Jim Roskind</mark>设计，从Chrome浏览器到Google服务器的连接中超过一半的连接都使用了QUIC，QUIC通过UDP协议在两个端点之间建立若干个多路连接，从而提高了网络连接的可靠性并能够有效的<mark>降低传输延时和避免网络拥堵</mark>。QUIC还能<mark class="label success">提高网络切换时的性能</mark>，当设备从WIFI切换到移动网络时，TCP协议会等以前的WIFI连接超时后才会和移动网建立新的连接，因而存在较高的延迟，而QUIC会包含一个<mark class="label info">标识符</mark>，这是客户端和服务器之间连接的<mark class="label primary">唯一标识</mark>，当用户IP地址发生变化时原始ID仍然有效，所以只需发送一个包含原始ID的数据包即可重新建立连接。
+<p>然而在国内各大电信运营都面临着巨大的带宽压力，为了保障用户的体验，运营商们会对UDP流量进行限制，例如丢包、低先先级队列和限速等。因此就目前的国内网络环境还是<mark class="label waring">关闭QUIC协议</mark>比较好一点。<span id="more"></span></p>
+<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Chome</a></li><li class="tab"><a href="#first-tab-2">Firefox</a></li><li class="tab"><a href="#first-tab-3">Microsoft Edeg</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><ul>
+<li>地址栏输入：chrome:&#x2F;&#x2F;flags</li>
+<li>搜索框输入：quic</li>
+<li>将<mark class="label info">Experimental QUIC protocol</mark>设置为<mark class="label waring">Disable</mark></li>
+<li>重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/chrome.png" class=""></li>
+</ul></div><div class="tab-pane" id="first-tab-2"><ul>
+<li>地址栏输入：about:config并回车</li>
+<li>搜索框输入：<mark class="label info">network.http.http3.enabled</mark></li>
+<li>选中布尔选项，单击+号，双击<mark class="label waring">true</mark>变成<mark>false</mark>，重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/firefox-1.png" class=""></li>
+</ul></div><div class="tab-pane" id="first-tab-3"><ul>
+<li>地址栏输入：edge:&#x2F;&#x2F;flags</li>
+<li>搜索框输入：<mark class="label info">Experimental QUIC protocol</mark></li>
+<li>设置为<mark class="label waring">Disable</mark></li>
+<li>重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/edge.png" class=""></li>
+</ul></div></div></div>]]></content>
+      <tags>
+        <tag>QUIC</tag>
+        <tag>Chrome</tag>
+        <tag>Firefox</tag>
+        <tag>Microsoft Edge</tag>
+      </tags>
+  </entry>
 </search>

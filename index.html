@@ -156,13 +156,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -189,6 +189,99 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Easton">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E云笔记">
+      <meta itemprop="description" content="好记性不如烂笔头，站在岸上学不会游泳">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | E云笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE.html" class="post-title-link" itemprop="url">浏览器关闭QUIC协议</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-09-18 10:30:27 / 修改时间：15:05:21" itemprop="dateCreated datePublished" datetime="2024-09-18T10:30:27+08:00">2024-09-18</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>459</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <mark class="label ">QUIC</mark>(Quick UDP Internet Connection)是一个通用的传输层网络协议，由<mark class="label info">Google</mark>公司的<mark class="label primary">Jim Roskind</mark>设计，从Chrome浏览器到Google服务器的连接中超过一半的连接都使用了QUIC，QUIC通过UDP协议在两个端点之间建立若干个多路连接，从而提高了网络连接的可靠性并能够有效的<mark>降低传输延时和避免网络拥堵</mark>。QUIC还能<mark class="label success">提高网络切换时的性能</mark>，当设备从WIFI切换到移动网络时，TCP协议会等以前的WIFI连接超时后才会和移动网建立新的连接，因而存在较高的延迟，而QUIC会包含一个<mark class="label info">标识符</mark>，这是客户端和服务器之间连接的<mark class="label primary">唯一标识</mark>，当用户IP地址发生变化时原始ID仍然有效，所以只需发送一个包含原始ID的数据包即可重新建立连接。
+<p>然而在国内各大电信运营都面临着巨大的带宽压力，为了保障用户的体验，运营商们会对UDP流量进行限制，例如丢包、低先先级队列和限速等。因此就目前的国内网络环境还是<mark class="label waring">关闭QUIC协议</mark>比较好一点。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -907,7 +1000,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">10 分钟</span>
+    <span title="站点阅读时长">12 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
