@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo添加标签页面</title>
+    <url>/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html</url>
+    <content><![CDATA[<p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
+<h2 id="添加“标签”页面"><a href="#添加“标签”页面" class="headerlink" title="添加“标签”页面"></a>添加“标签”页面</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">添加新页面</a></li><li class="tab"><a href="#first-tab-2">设置页面类型</a></li><li class="tab"><a href="#first-tab-3">编辑菜单</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><p>在 <mark class="label primary">站点根目不下</mark> 鼠标右键点击<font style="background:black">Open Git Bash here</font>，使用命令<font style="background:black">hexo n page tags</font>创建一个新的<font style="background:black">tags</font>页面：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo n page tags</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><p>编辑新页面，将类型改为<font style="background:black">tags</font>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-3"><p>编辑 <mark class="label primary">NexT配置文件</mark> 下的<font style="background:black">menu</font>选项，将<font style="background:black">tags</font>前的注释取消：</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  home:</span> / || fa fa-home</span><br><span class="line"><span class="symbol">  archives:</span> <span class="keyword">/archives/</span> || fa fa-archive</span><br><span class="line"><span class="symbol">  tags:</span> <span class="keyword">/tags/</span> || fa fa-tags</span><br></pre></td></tr></table></figure></div></div></div>
+
+<div class="note warning"><p>如果网站启用了评论系统，需要在新建的页面中禁用评论系统：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">itle:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+</div>]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>标签页面</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo搜索引擎优化</title>
     <url>/Hexo%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%BC%98%E5%8C%96.html</url>
     <content><![CDATA[<p>博客上线也有一个月了，查了一下Google和Bing两大搜索引擎，只有Google有收录Bing没有任何一条收录，于是对搜索引擎进行一下优化。</p>
@@ -21,23 +38,6 @@
         <tag>seo优化</tag>
         <tag>hexo-generator-sitemap</tag>
         <tag>hexo-indexnow</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo添加标签页面</title>
-    <url>/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html</url>
-    <content><![CDATA[<p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
-<h2 id="添加“标签”页面"><a href="#添加“标签”页面" class="headerlink" title="添加“标签”页面"></a>添加“标签”页面</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">添加新页面</a></li><li class="tab"><a href="#first-tab-2">设置页面类型</a></li><li class="tab"><a href="#first-tab-3">编辑菜单</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><p>在 <mark class="label primary">站点根目不下</mark> 鼠标右键点击<font style="background:black">Open Git Bash here</font>，使用命令<font style="background:black">hexo n page tags</font>创建一个新的<font style="background:black">tags</font>页面：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo n page tags</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><p>编辑新页面，将类型改为<font style="background:black">tags</font>：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-3"><p>编辑 <mark class="label primary">NexT配置文件</mark> 下的<font style="background:black">menu</font>选项，将<font style="background:black">tags</font>前的注释取消：</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  home:</span> / || fa fa-home</span><br><span class="line"><span class="symbol">  archives:</span> <span class="keyword">/archives/</span> || fa fa-archive</span><br><span class="line"><span class="symbol">  tags:</span> <span class="keyword">/tags/</span> || fa fa-tags</span><br></pre></td></tr></table></figure></div></div></div>
-
-<div class="note warning"><p>如果网站启用了评论系统，需要在新建的页面中禁用评论系统：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">itle:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-</div>]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>标签页面</tag>
       </tags>
   </entry>
   <entry>
@@ -117,28 +117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 启用Vercel的Web Analytics</title>
-    <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
-    <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
-<div class="link-grid"><div class="link-grid-container">
-<object class="link-grid-image" data="/images/logo.png"></object>
-<p>优化 Github Pages 国内的访问速度</p><p><mark class="label ">E云笔记</mark> 我的学习笔记</p>
-<a href="https://www.eyunbook.com/优化Github-Pages国内的访问速度.html"></a>
-</div></div>
-<mark class="label info">Vercle</mark>还提供了<mark class="label primary">Web Analytics</mark>功能
-<span id="more"></span>
-<h2 id="开启Web-Analytics"><a href="#开启Web-Analytics" class="headerlink" title="开启Web Analytics"></a>开启Web Analytics</h2><p>在<mark class="label info">Vercel</mark>仪表盘点点击进入已部署好的博客项目，点击上方导航栏的<mark class="label ">Analytics</mark>在新的页面中点击<mark class="label ">Web Analytics</mark>下方的<mark class="label success">Enable</mark>，在弹出的页面中选择免费计划并点击<mark class="label success">Enable</mark><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/analytics.png" alt="analytics"><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/enable.png" alt="enable"></p>
-<h2 id="将script添加到Hexo"><a href="#将script添加到Hexo" class="headerlink" title="将script添加到Hexo"></a>将script添加到Hexo</h2><p>在<mark class="label info">\blog\node_modules\hexo-theme-next\scripts\filters</mark>目录下新建<mark class="label ">vercel_analytics.js</mark>文件并复制以下代码到文件中保存</p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">hexo.extend.<span class="built_in">filter</span>.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="keyword">function</span>(<span class="params">injects</span>) &#123;</span><br><span class="line">    injects.bodyEnd.raw(<span class="string">&#x27;vercel-analytics-js&#x27;</span>, <span class="string">&#x27;&lt;script defer src=&quot;/_vercel/insights/script.js&quot;&gt;&lt;/script&gt;&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<p>重新部署后稍等一会就能看到Web Analytics数据</p>
-<div class="note warning"><p>此方法只适用于Next主题，其它主题请自行搜索</p>
-</div>]]></content>
-      <tags>
-        <tag>vercel</tag>
-        <tag>web analytics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ubuntu切换到root用户及用root用户登录</title>
     <url>/ubuntu%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95.html</url>
     <content><![CDATA[<p>当用安装时的用户名和密码登录到Ubuntu系统，如果想切换到root用户系统会提示：<mark class="label warning">Authentication failure</mark>，这是因为在安装ubuntu系统时设置的用户名和密码并不是root用户的。</p>
@@ -158,6 +136,28 @@
       <tags>
         <tag>ubuntu</tag>
         <tag>root</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 启用Vercel的Web Analytics</title>
+    <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
+    <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
+<div class="link-grid"><div class="link-grid-container">
+<object class="link-grid-image" data="/images/logo.png"></object>
+<p>优化 Github Pages 国内的访问速度</p><p><mark class="label ">E云笔记</mark> 我的学习笔记</p>
+<a href="https://www.eyunbook.com/优化Github-Pages国内的访问速度.html"></a>
+</div></div>
+<mark class="label info">Vercle</mark>还提供了<mark class="label primary">Web Analytics</mark>功能
+<span id="more"></span>
+<h2 id="开启Web-Analytics"><a href="#开启Web-Analytics" class="headerlink" title="开启Web Analytics"></a>开启Web Analytics</h2><p>在<mark class="label info">Vercel</mark>仪表盘点点击进入已部署好的博客项目，点击上方导航栏的<mark class="label ">Analytics</mark>在新的页面中点击<mark class="label ">Web Analytics</mark>下方的<mark class="label success">Enable</mark>，在弹出的页面中选择免费计划并点击<mark class="label success">Enable</mark><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/analytics.png" alt="analytics"><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/enable.png" alt="enable"></p>
+<h2 id="将script添加到Hexo"><a href="#将script添加到Hexo" class="headerlink" title="将script添加到Hexo"></a>将script添加到Hexo</h2><p>在<mark class="label info">\blog\node_modules\hexo-theme-next\scripts\filters</mark>目录下新建<mark class="label ">vercel_analytics.js</mark>文件并复制以下代码到文件中保存</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">hexo.extend.<span class="built_in">filter</span>.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="keyword">function</span>(<span class="params">injects</span>) &#123;</span><br><span class="line">    injects.bodyEnd.raw(<span class="string">&#x27;vercel-analytics-js&#x27;</span>, <span class="string">&#x27;&lt;script defer src=&quot;/_vercel/insights/script.js&quot;&gt;&lt;/script&gt;&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>重新部署后稍等一会就能看到Web Analytics数据</p>
+<div class="note warning"><p>此方法只适用于Next主题，其它主题请自行搜索</p>
+</div>]]></content>
+      <tags>
+        <tag>vercel</tag>
+        <tag>web analytics</tag>
       </tags>
   </entry>
   <entry>
@@ -226,6 +226,47 @@
 ]]></content>
       <tags>
         <tag>github pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国内外DNS搜集</title>
+    <url>/%E5%9B%BD%E5%86%85%E5%A4%96DNS%E6%90%9C%E9%9B%86.html</url>
+    <content><![CDATA[<mark class="label ">域名系统</mark>(DNS)会将域名转换为不方便记忆的<mark class="label info">IP地址</mark>，它就好比互联网的电话本。如DNS在域名解析过程中速度慢甚至解析错误会导致网页打开慢、访问失败。如果使用了不安全的DNS服务器，还会遭遇到DNS劫持和污染。<mark class="label danger">DNS劫持</mark>和<mark class="label danger">DNS污染</mark>都会返回错误的IP地址，轻者打不开网页重者可能会窃取用户的<mark class="label warning">密码</mark>、<mark class="label waring">登录凭证</mark>、<mark class="label warning">信用卡</mark>等信息。<span id="more"></span>
+<h2 id="国内DNS"><a href="#国内DNS" class="headerlink" title="国内DNS"></a>国内DNS</h2><h3 id="腾讯DNS"><a href="#腾讯DNS" class="headerlink" title="腾讯DNS"></a>腾讯DNS</h3><div class="tabs" id="腾讯"><ul class="nav-tabs"><li class="tab active"><a href="#腾讯-1">IPv4</a></li><li class="tab"><a href="#腾讯-2">IPv6</a></li><li class="tab"><a href="#腾讯-3">DoH</a></li><li class="tab"><a href="#腾讯-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="腾讯-1"><p>119.29.29.29</p></div><div class="tab-pane" id="腾讯-2"><p>2402:4e00::<br>2402:4e00:1::</p></div><div class="tab-pane" id="腾讯-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//doh.pub/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//1.12.12.12/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//120.53.53.53/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//sm2.doh.pub/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>国密SM2，基于腾讯云政企国密解决方案</p>
+</div></div><div class="tab-pane" id="腾讯-4"><p>dot.pub<br>1.12.12.12<br>120.53.53.53</p></div></div></div>
+
+<h3 id="阿里DNS"><a href="#阿里DNS" class="headerlink" title="阿里DNS"></a>阿里DNS</h3><div class="tabs" id="阿里"><ul class="nav-tabs"><li class="tab active"><a href="#阿里-1">IPv4</a></li><li class="tab"><a href="#阿里-2">IPv6</a></li><li class="tab"><a href="#阿里-3">DoH</a></li><li class="tab"><a href="#阿里-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="阿里-1"><p>223.5.5.5<br>223.6.6.6</p></div><div class="tab-pane" id="阿里-2"><p>2400:3200::1<br>2400:3200:baba::1</p></div><div class="tab-pane" id="阿里-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.alidns.com/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//223.5.5.5/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//223.6.6.6/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="阿里-4"><p>dns.alidns.com<br>223.5.5.5<br>223.6.6.6</p></div></div></div>
+
+<h3 id="360DNS"><a href="#360DNS" class="headerlink" title="360DNS"></a>360DNS</h3><div class="tabs" id="360"><ul class="nav-tabs"><li class="tab active"><a href="#360-1">电信、移动、铁通</a></li><li class="tab"><a href="#360-2">联通</a></li><li class="tab"><a href="#360-3">DoH</a></li><li class="tab"><a href="#360-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="360-1"><p>101.226.4.6<br>218.30.118.6</p></div><div class="tab-pane" id="360-2"><p>123.125.81.6<br>140.207.198.6</p></div><div class="tab-pane" id="360-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//doh.360.cn</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="360-4"><p>dot.360.cn</p></div></div></div>
+
+<h3 id="114DNS"><a href="#114DNS" class="headerlink" title="114DNS"></a>114DNS</h3><div class="tabs" id="114"><ul class="nav-tabs"><li class="tab active"><a href="#114-1">IPv4</a></li><li class="tab"><a href="#114-2">隐私增强</a></li><li class="tab"><a href="#114-3">学校和家长</a></li></ul><div class="tab-content"><div class="tab-pane active" id="114-1"><p>114.114.114.114<br>114.114.115.115</p></div><div class="tab-pane" id="114-2"><p>114.114.114.119<br>114.114.115.119</p>
+<div class="note info"><p>增强网银、证券、购物、游戏、隐私信息安全</p>
+</div></div><div class="tab-pane" id="114-3"><p>114.114.114.110<br>114.114.115.110</p>
+<div class="note info"><p>可拦截色情网站</p>
+</div></div></div></div>
+
+<h2 id="国外DNS"><a href="#国外DNS" class="headerlink" title="国外DNS"></a>国外DNS</h2><h3 id="Google-DNS"><a href="#Google-DNS" class="headerlink" title="Google DNS"></a>Google DNS</h3><div class="tabs" id="google"><ul class="nav-tabs"><li class="tab active"><a href="#google-1">IPv4</a></li><li class="tab"><a href="#google-2">IPv6</a></li><li class="tab"><a href="#google-3">DoH</a></li><li class="tab"><a href="#google-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="google-1"><p>8.8.8.8<br>8.8.4.4</p></div><div class="tab-pane" id="google-2"><p>2001:4860:4860::8888<br>2001:4860:4860::8844</p></div><div class="tab-pane" id="google-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.google/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//8.8.8.8/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//8.8.4.4/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="google-4"><p>dns.google</p></div></div></div>
+
+<h3 id="Cloudflare-DNS"><a href="#Cloudflare-DNS" class="headerlink" title="Cloudflare DNS"></a>Cloudflare DNS</h3><div class="tabs" id="cloudflare"><ul class="nav-tabs"><li class="tab active"><a href="#cloudflare-1">IPv4</a></li><li class="tab"><a href="#cloudflare-2">IPv6</a></li><li class="tab"><a href="#cloudflare-3">DoH</a></li><li class="tab"><a href="#cloudflare-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cloudflare-1"><p>1.1.1.1<br>1.0.0.1</p>
+<div class="tabs" id="sub-tabs"><ul class="nav-tabs"><li class="tab active"><a href="#sub-tabs-1">阻止恶意软件</a></li><li class="tab"><a href="#sub-tabs-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sub-tabs-1"><p>1.1.1.2<br>1.0.0.2</p></div><div class="tab-pane" id="sub-tabs-2"><p>1.1.1.3<br>1.0.0.3</p></div></div></div></div><div class="tab-pane" id="cloudflare-2"><p>2606:4700:4700::1111<br>2606:4700:4700::1001</p>
+<div class="tabs" id="sub-tabs"><ul class="nav-tabs"><li class="tab active"><a href="#sub-tabs-1">阻止恶意软件</a></li><li class="tab"><a href="#sub-tabs-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sub-tabs-1"><p>2606:4700:4700::1112<br>2606:4700:4700::1002</p></div><div class="tab-pane" id="sub-tabs-2"><p>2606:4700:4700::1113<br>2606:4700:4700::1003</p></div></div></div></div><div class="tab-pane" id="cloudflare-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//cloudflare-dns.com/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//1.1.1.1/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="tabs" id="sub-tabs"><ul class="nav-tabs"><li class="tab active"><a href="#sub-tabs-1">阻止恶意软件</a></li><li class="tab"><a href="#sub-tabs-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sub-tabs-1"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//security.cloudflare-dns.com/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="sub-tabs-2"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//family.cloudflare-dns.com/dns-query</span></span><br></pre></td></tr></table></figure></div></div></div></div><div class="tab-pane" id="cloudflare-4"><p>one.one.one.one</p>
+<div class="tabs" id="subtabs"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs-1"><p>security.cloudflare-dns.com</p></div><div class="tab-pane" id="subtabs-2"><p>family.cloudflare-dns.com</p></div></div></div></div></div></div>
+
+<h3 id="Quad9-DNS"><a href="#Quad9-DNS" class="headerlink" title="Quad9 DNS"></a>Quad9 DNS</h3><div class="tabs" id="quad9"><ul class="nav-tabs"><li class="tab active"><a href="#quad9-1">IPv4</a></li><li class="tab"><a href="#quad9-2">IPv6</a></li><li class="tab"><a href="#quad9-3">DoH</a></li><li class="tab"><a href="#quad9-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="quad9-1"><p>9.9.9.9<br>149.112.112.112</p>
+<div class="tabs" id="subtabs"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs-1"><p>9.9.9.11<br>149.112.112.11</p></div></div></div></div><div class="tab-pane" id="quad9-2"><p>2620:fe::fe<br>2620:fe::9</p>
+<div class="tabs" id="subtabs"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs-1"><p>2620:fe::11<br>2620:fe::fe:11</p></div></div></div></div><div class="tab-pane" id="quad9-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.quad9.net/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//9.9.9.9/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="tabs" id="subtabs"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs-1"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://dns11.quad9.net/dns-query</span><br></pre></td></tr></table></figure></div></div></div></div><div class="tab-pane" id="quad9-4"><p>dns.quad9.net</p>
+<div class="tabs" id="subtabs"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs-1"><p>dns11.quad9.net</p></div></div></div></div></div></div>
+
+<div class="note info"><p>Quad9 DNS默认支持恶意软件阻止和DNSSEC验证</p>
+</div>]]></content>
+      <tags>
+        <tag>dns</tag>
       </tags>
   </entry>
   <entry>
