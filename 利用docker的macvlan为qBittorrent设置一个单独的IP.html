@@ -24,29 +24,34 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.eyunbook.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.20.0","exturl":true,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#f90303","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="本地安装(Win11)安装前提在安装Hexo前，需要先安装以下程序  Node.js(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本) Git">
+    <meta name="description" content="家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Win11搭建hexo并部署到GitHub">
-<meta property="og:url" content="https://www.eyunbook.com/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html">
+<meta property="og:title" content="利用docker的macvlan为qBittorrent设置一个单独的IP">
+<meta property="og:url" content="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html">
 <meta property="og:site_name" content="E云笔记">
-<meta property="og:description" content="本地安装(Win11)安装前提在安装Hexo前，需要先安装以下程序  Node.js(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本) Git">
+<meta property="og:description" content="家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-07-31T02:48:46.000Z">
-<meta property="article:modified_time" content="2024-09-02T12:58:14.897Z">
+<meta property="og:image" content="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/opne_vswitch.png">
+<meta property="og:image" content="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/docker_network.png">
+<meta property="article:published_time" content="2025-01-29T05:01:16.000Z">
+<meta property="article:modified_time" content="2025-01-29T07:18:57.042Z">
 <meta property="article:author" content="Easton">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="github">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="macvlan">
+<meta property="article:tag" content="群晖">
+<meta property="article:tag" content="qBittorrent">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/opne_vswitch.png">
 
 
-<link rel="canonical" href="https://www.eyunbook.com/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html">
+<link rel="canonical" href="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.eyunbook.com/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html","path":"Win11搭建hexo并部署到GitHub.html","title":"Win11搭建hexo并部署到GitHub"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html","path":"利用docker的macvlan为qBittorrent设置一个单独的IP.html","title":"利用docker的macvlan为qBittorrent设置一个单独的IP"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Win11搭建hexo并部署到GitHub | E云笔记</title>
+<title>利用docker的macvlan为qBittorrent设置一个单独的IP | E云笔记</title>
   
 
 
@@ -146,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85-Win11"><span class="nav-number">1.</span> <span class="nav-text">本地安装(Win11)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%89%8D%E6%8F%90"><span class="nav-number">1.1.</span> <span class="nav-text">安装前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9hexo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">修改hexo配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E8%87%B3GitHub"><span class="nav-number">2.</span> <span class="nav-text">上传至GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">新建仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="nav-number">2.2.</span> <span class="nav-text">部署到GitHub</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E4%B8%8E%E6%8F%92%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">主题与插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Next%E5%AE%89%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">Next安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-config-next-yml"><span class="nav-number">3.2.</span> <span class="nav-text">修改主题配置文件(_config.next.yml)</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E7%BE%A4%E6%99%96%E7%9A%84Open-vSwitch"><span class="nav-number">1.</span> <span class="nav-text">开启群晖的Open vSwitch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%BE%A4%E6%99%96%E5%92%8Cdocker%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF"><span class="nav-number">2.</span> <span class="nav-text">查看群晖和docker网络信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAmacvlan"><span class="nav-number">3.</span> <span class="nav-text">创建macvlan</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAqBittorrent%E5%AE%B9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">创建qBittorrent容器</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -204,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html">
+    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -217,12 +222,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Win11搭建hexo并部署到GitHub | E云笔记">
+      <meta itemprop="name" content="利用docker的macvlan为qBittorrent设置一个单独的IP | E云笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Win11搭建hexo并部署到GitHub
+          利用docker的macvlan为qBittorrent设置一个单独的IP
         </h1>
 
         <div class="post-meta-container">
@@ -232,15 +237,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-07-31 10:48:46" itemprop="dateCreated datePublished" datetime="2024-07-31T10:48:46+08:00">2024-07-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-09-02 20:58:14" itemprop="dateModified" datetime="2024-09-02T20:58:14+08:00">2024-09-02</time>
+      <time title="创建时间：2025-01-29 13:01:16 / 修改时间：15:18:57" itemprop="dateCreated datePublished" datetime="2025-01-29T13:01:16+08:00">2025-01-29</time>
     </span>
 
   
@@ -257,14 +256,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>978</span>
+      <span>685</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -274,73 +273,33 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>在安装Hexo前，需要先安装以下程序</p>
+    <div class="post-body" itemprop="articleBody"><p>家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代理常用端口可以解决这一问题但并不是我想要的结果。经过一翻Google发现利用docker的macvlan可以为qBittorrent单独设置一个IP地址，这样就可以利用Mihomo的代理黑名单功能让qBittorrent流量不走代理。<span id="more"></span></p>
+<h2 id="开启群晖的Open-vSwitch"><a href="#开启群晖的Open-vSwitch" class="headerlink" title="开启群晖的Open vSwitch"></a>开启群晖的Open vSwitch</h2><p>点击控制面板—-&gt;网络—-&gt;网络界面—-&gt;管理—-&gt;Open vSwitch，开启Open vSwitch功能</p>
+<img data-src="/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/opne_vswitch.png" class="">
+<h2 id="查看群晖和docker网络信息"><a href="#查看群晖和docker网络信息" class="headerlink" title="查看群晖和docker网络信息"></a>查看群晖和docker网络信息</h2><p>SSH连接群晖后输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -i     <span class="comment"># 为了后续操作方便先切换到root用户</span></span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+<p>会看到一个名为ovs_eth0的网络接口<br>接着输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker netwrok <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>这时会列出docker的所有的已有网络</p>
+<img data-src="/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/docker_network.png" class="">
+<div class="note info"><p>qBittorrent是我已经建好的macvln，如果想删除已建好的macvlan可使用命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker network <span class="built_in">rm</span> macvlan_name</span><br></pre></td></tr></table></figure></div>
+<h2 id="创建macvlan"><a href="#创建macvlan" class="headerlink" title="创建macvlan"></a>创建macvlan</h2><p>创建macvlan使用如下命令：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">docker<span class="built_in"> network </span>create -d macvlan <span class="attribute">--subnet</span>=192.168.31.0/24 <span class="attribute">--gateway</span>=192.168.31.1 --ipv6 <span class="attribute">--subnet</span>=2409::/60 <span class="attribute">--gateway</span>=2409::1 -o <span class="attribute">parent</span>=ovs_eth0 qBittorrent</span><br></pre></td></tr></table></figure>
+<div class="note info"><p><mark class="label ">subnet&#x3D;192.168.31.0&#x2F;24</mark>&emsp;&emsp;IPv4网段<br><mark class="label primary">gateway&#x3D;192.168.31.1</mark>&emsp;&emsp;IPv4网关<br><mark class="label success">ipv6</mark>&emsp;&emsp;启用IPv6<br><mark class="label info">subnet&#x3D;2409::&#x2F;60</mark>&emsp;&emsp;IPv6前缀<code>(此写法仅限中国移动)</code><br><mark class="label warning">gateway&#x3D;2409::1</mark>&emsp;&emsp;IPv6网关<br><mark class="label danger">parent&#x3D;ovs_eth0</mark>&emsp;&emsp;docker网络接口的名称<br><mark class="label default">qBittorrent</mark>&emsp;&emsp;macvlan网络的名称<br><strong>IPv6前缀和网关的写法除了上述写法外还可以使用：</strong></p>
 <ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span>(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本)</li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span><span id="more"></span>
-<strong>设置npm代理</strong><br>编辑”C:\Users\user\.npmrc”文件，添加以下内容：<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">https-proxy</span>=http://proxy-server-address:port</span><br><span class="line"><span class="attr">proxy</span>=http://proxy-server-address:port</span><br></pre></td></tr></table></figure>
-<strong>查看当前代理</strong><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="built_in">get</span> proxy</span><br></pre></td></tr></table></figure></li>
+<li><em><strong>subnet&#x3D;fe80::&#x2F;60&emsp;&emsp;gateway&#x3D;fe80::1</strong></em></li>
+<li><em><strong>subnet&#x3D;fd00:9248:6b2c::&#x2F;48&emsp;&emsp;gateway&#x3D;fd00:9248:6b2c::1</strong></em>具体的前缀和网关要根据OpenWrt接口—-&gt;全局网络选项的设置进行修改</li>
 </ul>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在电脑上新建一个文件夹，例如E:\hexo。进入该文夹在空白处点鼠标右键，选择Open Git Bash here，输入如下命令：</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
-<p>install -g命令是使用npm包管理工具进行全局安装，hexo-cli为hexo的客户端模块。<br>安装完成后，执行以下命令，Hexo会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">hexo init <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>cd <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>node-modules  依赖包</li>
-<li>public    存放生成的页面</li>
-<li>_config.yml   网站的配置文件</li>
-<li>package.json  应用程序信息</li>
-<li>scaffolds     模板文件夹</li>
-<li>source    资源文件夹</li>
-<li>thems     主题文件夹</li>
-</ul>
-<h3 id="修改hexo配置文件"><a href="#修改hexo配置文件" class="headerlink" title="修改hexo配置文件"></a>修改hexo配置文件</h3><p>hexo的配置文件位于站点根目录下，名字为：_config.yml，主要修改以下内容：</p>
-<ul>
-<li>title 网站标题</li>
-<li>subtitle  网站副标题</li>
-<li>description   网站描述</li>
-<li>keywords  网站关键字</li>
-<li>author    作者名字</li>
-<li>language  网站使用的语言，一般改为zh-CN</li>
-<li>timezone  网站时区，一般改为Asia&#x2F;Shanghai</li>
-<li>url   网站网址</li>
-<li>theme 主题名称，比如next</li>
-<li>post_asset_folder 设为true后，执行命令$hexo new post_name会在source&#x2F;_posts中生成和文章同名的文件夹，可以把图片等放到此文件夹中</li>
-<li>在post_asset_folder下面添加如下配置</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>这时<font color=red>![](image.png)</font>会被自动解析</p>
-<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvY29uZmlndXJhdGlvbg==">官网<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="上传至GitHub"><a href="#上传至GitHub" class="headerlink" title="上传至GitHub"></a>上传至GitHub</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>在GitHub个人主页新建一仓库，名称的前半部分为GitHub的用户名，后半部分为github.io<br>在git bash中输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;youremail&quot;</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
-<p>yourname,youremail分别为GitHub的用户名和注册邮箱<br>点击头像选择Settings，点击左侧栏里的SSH and GPG keys，打开C:\Users\user.ssh目录下的id_rsa.pub文件，把内容复制到SSH keys中</p>
-<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>打开blog目录下的_config.yml文件，找到文件末尾的Deployment添加以下内容：</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">    type:</span> git</span><br><span class="line"><span class="symbol">    repo:</span> https:<span class="comment">//github.com/username/username.github.io.git</span></span><br><span class="line"><span class="symbol">    branch:</span> main</span><br></pre></td></tr></table></figure>
-<p>在git bash中输入以下命令安装git部署工具：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h2 id="主题与插件"><a href="#主题与插件" class="headerlink" title="主题与插件"></a>主题与插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=">官网<i class="fa fa-external-link-alt"></i></span>有很多的主题，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25leHQtdGhlbWUvaGV4by10aGVtZS1uZXh0">Next<i class="fa fa-external-link-alt"></i></span>一款很受欢迎的主题。</p>
-<h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><p>在blog目录下运行如下命令；</p>
-<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-<span class="keyword">next</span><span class="symbol">@latest</span></span><br></pre></td></tr></table></figure>
-<p>新建一个名为：_config.next.yml的空文件并运行如下命令：</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cp</span> node_modules/hexo-theme-<span class="keyword">next</span>/_config.yml _config.<span class="keyword">next</span>.yml</span><br></pre></td></tr></table></figure>
-<p>修改_config.yml将theme: landscape改为theme: next</p>
-<h3 id="修改主题配置文件-config-next-yml"><a href="#修改主题配置文件-config-next-yml" class="headerlink" title="修改主题配置文件(_config.next.yml)"></a>修改主题配置文件(_config.next.yml)</h3><ul>
-<li>Schemes   主题样式根据个人喜好选择，我个人喜欢Gemini</li>
-<li>Dark Mode     黑暗模式</li>
-<li>favicon   站点图标，使用自己的图标替换\hexo\blog\node_modules\hexo-theme-next\source\images下的文件</li>
-<li>menu  菜单栏，取消要启用的相关菜单注释即可，需要注意的是除home和archives外其它的页面都需手动创建</li>
-<li>sidebar   侧边栏，将display改为always</li>
-<li>avatar    头像，rounded设置为true头像为圆形，rotated设置为true，鼠标悬停头像会旋转</li>
-<li>excerpt-description   设为false使用&lt;!-- more –&gt;来分隔文章</li>
-<li>Post wordcount display setting：文章字数统计，要启用此插件必须先安装<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="built_in">word</span>-counter</span><br></pre></td></tr></table></figure></li>
-<li>codeblock：代码高亮，个人比较喜欢a11y-dark，更多的高亮主题请<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9oaWdobGlnaHQv">参考<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<div class="note info"><p>如果使用不蒜子计数统计，可修改\node_modules\hexo-theme-next\layout_third-party\statistics目录下的busuanzi-counter.njk文件，将</p>
-<figure class="highlight handlebars"><table><tr><td class="code"><pre><span class="line"><span class="language-xml">&lt;script</span><span class="template-variable">&#123;&#123; <span class="name">pjax</span> &#125;&#125;</span><span class="language-xml"> async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>修改为</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://vercount.one/js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">官网文档<i class="fa fa-external-link-alt"></i></span>根据个人需要进行修改</p>
+</div>
+<p>完成后再次输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>就会发现多一个名为qBittorrent的macvlan网络接口</p>
+<h2 id="创建qBittorrent容器"><a href="#创建qBittorrent容器" class="headerlink" title="创建qBittorrent容器"></a>创建qBittorrent容器</h2><p>使用如下命令创建qBittorrent容器</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">run</span> -d <span class="attribute">--name</span>=qBittorrent <span class="attribute">--net</span>=qBittorrent <span class="attribute">--ip</span>=192.168.31.4 -v /volume1/qBittorrent/config:<span class="built_in">/config </span>-v /volume1/qBittorrent/download:/downloads <span class="attribute">--privileged</span>=<span class="literal">true</span> <span class="attribute">--restart</span>=always superng6/qbittorrent:latest</span><br></pre></td></tr></table></figure>
+<div class="note info"><p><mark class="label default">name&#x3D;qBittorrent</mark>&emsp;&emsp;容器的名字<br><mark class="label danger">ip&#x3D;192.168.31.4</mark>&emsp;&emsp;容器的IP地址<br><mark class="label warning">v &#x2F;volume1&#x2F;qBittorrent&#x2F;config:&#x2F;config</mark>&emsp;&emsp;容器config文件和群晖共享文件夹的映射<br><mark class="label info">-v &#x2F;volume1&#x2F;qBittorrent&#x2F;download:&#x2F;downloads</mark>&emsp;&emsp;容器downloads文件和群晖共享文件夹的映射</p>
+</div>
+<p>至此就创建了一个IP地址为：192.168.31.4的qBittorrent容器，将此IP地址加入到Mihomo的代理黑名单中流量就不会经过代理。</p>
 
     </div>
 
@@ -358,7 +317,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://www.eyunbook.com/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html" title="Win11搭建hexo并部署到GitHub">https://www.eyunbook.com/Win11搭建hexo并部署到GitHub.html</a>
+      <a href="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html" title="利用docker的macvlan为qBittorrent设置一个单独的IP">https://www.eyunbook.com/利用docker的macvlan为qBittorrent设置一个单独的IP.html</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -367,19 +326,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
-              <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+              <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+              <a href="/tags/macvlan/" rel="tag"><i class="fa fa-tag"></i> macvlan</a>
+              <a href="/tags/%E7%BE%A4%E6%99%96/" rel="tag"><i class="fa fa-tag"></i> 群晖</a>
+              <a href="/tags/qBittorrent/" rel="tag"><i class="fa fa-tag"></i> qBittorrent</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/%E5%9C%A8Ubuntu-24-04-%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E5%B9%B6%E6%8E%88%E4%BA%88sudo%E6%9D%83%E9%99%90.html" rel="prev" title="在Ubuntu 24.04 中添加非root用户并授予sudo权限">
+                  <i class="fa fa-angle-left"></i> 在Ubuntu 24.04 中添加非root用户并授予sudo权限
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html" rel="next" title="使用自定义域名访问GitHub Pages">
-                  使用自定义域名访问GitHub Pages <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -497,7 +458,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.eyunbook.com/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

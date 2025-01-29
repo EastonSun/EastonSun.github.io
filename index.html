@@ -156,13 +156,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">29</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -189,6 +189,98 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Easton">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="E云笔记">
+      <meta itemprop="description" content="好记性不如烂笔头，站在岸上学不会游泳">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | E云笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html" class="post-title-link" itemprop="url">利用docker的macvlan为qBittorrent设置一个单独的IP</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-01-29 13:01:16 / 修改时间：15:18:57" itemprop="dateCreated datePublished" datetime="2025-01-29T13:01:16+08:00">2025-01-29</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>685</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代理常用端口可以解决这一问题但并不是我想要的结果。经过一翻Google发现利用docker的macvlan可以为qBittorrent单独设置一个IP地址，这样就可以利用Mihomo的代理黑名单功能让qBittorrent流量不走代理。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -318,9 +410,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-10-04 17:36:20 / 修改时间：21:12:08" itemprop="dateCreated datePublished" datetime="2024-10-04T17:36:20+08:00">2024-10-04</time>
+      <time title="创建时间：2024-10-04 17:36:20" itemprop="dateCreated datePublished" datetime="2024-10-04T17:36:20+08:00">2024-10-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-29 15:40:32" itemprop="dateModified" datetime="2025-01-29T15:40:32+08:00">2025-01-29</time>
     </span>
 
   
@@ -330,7 +428,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -1057,98 +1155,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://www.eyunbook.com/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Easton">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="E云笔记">
-      <meta itemprop="description" content="好记性不如烂笔头，站在岸上学不会游泳">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | E云笔记">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html" class="post-title-link" itemprop="url">Hexo添加标签页面</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2024-08-11 14:37:56 / 修改时间：15:55:36" itemprop="dateCreated datePublished" datetime="2024-08-11T14:37:56+08:00">2024-08-11</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>229</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -1173,14 +1179,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">7k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">26 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

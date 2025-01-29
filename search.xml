@@ -127,6 +127,11 @@
 <h3 id="自定义配置"><a href="#自定义配置" class="headerlink" title="自定义配置"></a>自定义配置</h3><p>有一些配置无法通过变量来指定，需要通过手动修改<font style="background:black">.config</font>文件，<br>将<font style="background:black">Root filesystem images</font>中的<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_ISO_IMAGES</span>=y</span><br></pre></td></tr></table></figure>修改为：<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"># CONFIG_ISO_IMAGES <span class="keyword">is</span> not <span class="keyword">set</span></span><br></pre></td></tr></table></figure>可取消构建ISO固件<br>还可以修改kernel和rootfs的大小：</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">CONFIG_TARGET_KERNEL_PARTSIZE</span>=<span class="number">64</span></span><br><span class="line"><span class="attr">CONFIG_TARGET_ROOTFS_PARTSIZE</span>=<span class="number">1024</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="添加自定义软件源"><a href="#添加自定义软件源" class="headerlink" title="添加自定义软件源"></a>添加自定义软件源</h3><p>编辑根目录的<mark class="label success">repositories.conf</mark>文件，注释掉<code>option check_signature</code>并加入自己软件源即可</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">## Place your custom <span class="keyword">repositories</span> here, they must match the architecture and version.</span><br><span class="line"># src<span class="regexp">/gz %n https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases/<span class="number">23.05</span>.<span class="number">5</span></span><br><span class="line"># src custom <span class="keyword">file</span>:<span class="comment">///usr/src/openwrt/bin/x86/packages</span></span><br><span class="line"></span><br><span class="line">## Remote <span class="keyword">package</span> <span class="keyword">repositories</span></span><br><span class="line">src<span class="regexp">/gz openwrt_core https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases<span class="regexp">/23.05.5/</span>targets<span class="regexp">/x86/</span><span class="number">64</span>/packages</span><br><span class="line">src<span class="regexp">/gz openwrt_base https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases<span class="regexp">/23.05.5/</span>packages<span class="regexp">/x86_64/</span>base</span><br><span class="line">src<span class="regexp">/gz openwrt_luci https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases<span class="regexp">/23.05.5/</span>packages<span class="regexp">/x86_64/</span>luci</span><br><span class="line">src<span class="regexp">/gz openwrt_packages https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases<span class="regexp">/23.05.5/</span>packages<span class="regexp">/x86_64/</span>packages</span><br><span class="line">src<span class="regexp">/gz openwrt_routing https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases<span class="regexp">/23.05.5/</span>packages<span class="regexp">/x86_64/</span>routing</span><br><span class="line">src<span class="regexp">/gz openwrt_telephony https:/</span><span class="regexp">/downloads.openwrt.org/</span>releases<span class="regexp">/23.05.5/</span>packages<span class="regexp">/x86_64/</span>telephony</span><br><span class="line">src<span class="regexp">/gz openwrt_kenzok8_ackage https:/</span><span class="regexp">/op.dllkids.xyz/</span>packages<span class="regexp">/x86_64/</span></span><br><span class="line"></span><br><span class="line">## <span class="keyword">This</span> is the local <span class="keyword">package</span> repository, <span class="keyword">do</span> not remove!</span><br><span class="line">src imagebuilder <span class="keyword">file</span>:packages</span><br><span class="line"></span><br><span class="line"># option check_signature</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>kenzok8这个软件源更新比较快，尴尬的是因为下载量大服务器的流量不够用，二是https证书经常过期</p>
+</div>
 <h3 id="构建固件"><a href="#构建固件" class="headerlink" title="构建固件"></a>构建固件</h3><p>选择好配置文件、插件和自定义文件夹后，使用<font style="background:black">make image</font>命令构建固件：</p>
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">make image PROFILE<span class="operator">=</span><span class="string">&quot;profile-name&quot;</span> PACKAGES<span class="operator">=</span><span class="string">&quot;pkg1 pkg2 pkg3 -pkg4 -pkg5 -pkg6&quot;</span> FILES<span class="operator">=</span><span class="string">&quot;files&quot;</span></span><br></pre></td></tr></table></figure>
 <p>编译好的固件存放于<font style="background:black">bin</font>目录下</p>
@@ -328,6 +333,44 @@
 ]]></content>
       <tags>
         <tag>github pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用docker的macvlan为qBittorrent设置一个单独的IP</title>
+    <url>/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html</url>
+    <content><![CDATA[<p>家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代理常用端口可以解决这一问题但并不是我想要的结果。经过一翻Google发现利用docker的macvlan可以为qBittorrent单独设置一个IP地址，这样就可以利用Mihomo的代理黑名单功能让qBittorrent流量不走代理。<span id="more"></span></p>
+<h2 id="开启群晖的Open-vSwitch"><a href="#开启群晖的Open-vSwitch" class="headerlink" title="开启群晖的Open vSwitch"></a>开启群晖的Open vSwitch</h2><p>点击控制面板—-&gt;网络—-&gt;网络界面—-&gt;管理—-&gt;Open vSwitch，开启Open vSwitch功能</p>
+<img data-src="/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/opne_vswitch.png" class="">
+<h2 id="查看群晖和docker网络信息"><a href="#查看群晖和docker网络信息" class="headerlink" title="查看群晖和docker网络信息"></a>查看群晖和docker网络信息</h2><p>SSH连接群晖后输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -i     <span class="comment"># 为了后续操作方便先切换到root用户</span></span><br><span class="line">ip addr</span><br></pre></td></tr></table></figure>
+<p>会看到一个名为ovs_eth0的网络接口<br>接着输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker netwrok <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>这时会列出docker的所有的已有网络</p>
+<img data-src="/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP/docker_network.png" class="">
+<div class="note info"><p>qBittorrent是我已经建好的macvln，如果想删除已建好的macvlan可使用命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker network <span class="built_in">rm</span> macvlan_name</span><br></pre></td></tr></table></figure></div>
+<h2 id="创建macvlan"><a href="#创建macvlan" class="headerlink" title="创建macvlan"></a>创建macvlan</h2><p>创建macvlan使用如下命令：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">docker<span class="built_in"> network </span>create -d macvlan <span class="attribute">--subnet</span>=192.168.31.0/24 <span class="attribute">--gateway</span>=192.168.31.1 --ipv6 <span class="attribute">--subnet</span>=2409::/60 <span class="attribute">--gateway</span>=2409::1 -o <span class="attribute">parent</span>=ovs_eth0 qBittorrent</span><br></pre></td></tr></table></figure>
+<div class="note info"><p><mark class="label ">subnet&#x3D;192.168.31.0&#x2F;24</mark>&emsp;&emsp;IPv4网段<br><mark class="label primary">gateway&#x3D;192.168.31.1</mark>&emsp;&emsp;IPv4网关<br><mark class="label success">ipv6</mark>&emsp;&emsp;启用IPv6<br><mark class="label info">subnet&#x3D;2409::&#x2F;60</mark>&emsp;&emsp;IPv6前缀<code>(此写法仅限中国移动)</code><br><mark class="label warning">gateway&#x3D;2409::1</mark>&emsp;&emsp;IPv6网关<br><mark class="label danger">parent&#x3D;ovs_eth0</mark>&emsp;&emsp;docker网络接口的名称<br><mark class="label default">qBittorrent</mark>&emsp;&emsp;macvlan网络的名称<br><strong>IPv6前缀和网关的写法除了上述写法外还可以使用：</strong></p>
+<ul>
+<li><em><strong>subnet&#x3D;fe80::&#x2F;60&emsp;&emsp;gateway&#x3D;fe80::1</strong></em></li>
+<li><em><strong>subnet&#x3D;fd00:9248:6b2c::&#x2F;48&emsp;&emsp;gateway&#x3D;fd00:9248:6b2c::1</strong></em>具体的前缀和网关要根据OpenWrt接口—-&gt;全局网络选项的设置进行修改</li>
+</ul>
+</div>
+<p>完成后再次输入：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker network <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+<p>就会发现多一个名为qBittorrent的macvlan网络接口</p>
+<h2 id="创建qBittorrent容器"><a href="#创建qBittorrent容器" class="headerlink" title="创建qBittorrent容器"></a>创建qBittorrent容器</h2><p>使用如下命令创建qBittorrent容器</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">run</span> -d <span class="attribute">--name</span>=qBittorrent <span class="attribute">--net</span>=qBittorrent <span class="attribute">--ip</span>=192.168.31.4 -v /volume1/qBittorrent/config:<span class="built_in">/config </span>-v /volume1/qBittorrent/download:/downloads <span class="attribute">--privileged</span>=<span class="literal">true</span> <span class="attribute">--restart</span>=always superng6/qbittorrent:latest</span><br></pre></td></tr></table></figure>
+<div class="note info"><p><mark class="label default">name&#x3D;qBittorrent</mark>&emsp;&emsp;容器的名字<br><mark class="label danger">ip&#x3D;192.168.31.4</mark>&emsp;&emsp;容器的IP地址<br><mark class="label warning">v &#x2F;volume1&#x2F;qBittorrent&#x2F;config:&#x2F;config</mark>&emsp;&emsp;容器config文件和群晖共享文件夹的映射<br><mark class="label info">-v &#x2F;volume1&#x2F;qBittorrent&#x2F;download:&#x2F;downloads</mark>&emsp;&emsp;容器downloads文件和群晖共享文件夹的映射</p>
+</div>
+<p>至此就创建了一个IP地址为：192.168.31.4的qBittorrent容器，将此IP地址加入到Mihomo的代理黑名单中流量就不会经过代理。</p>
+]]></content>
+      <tags>
+        <tag>docker</tag>
+        <tag>macvlan</tag>
+        <tag>群晖</tag>
+        <tag>qBittorrent</tag>
       </tags>
   </entry>
   <entry>
