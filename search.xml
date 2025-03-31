@@ -224,28 +224,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo 启用Vercel的Web Analytics</title>
-    <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
-    <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
-<div class="link-grid"><div class="link-grid-container">
-<object class="link-grid-image" data="/images/logo.png"></object>
-<p>优化 Github Pages 国内的访问速度</p><p><mark class="label ">E云笔记</mark> 我的学习笔记</p>
-<a href="https://www.eyunbook.com/优化Github-Pages国内的访问速度.html"></a>
-</div></div>
-<mark class="label info">Vercle</mark>还提供了<mark class="label primary">Web Analytics</mark>功能
-<span id="more"></span>
-<h2 id="开启Web-Analytics"><a href="#开启Web-Analytics" class="headerlink" title="开启Web Analytics"></a>开启Web Analytics</h2><p>在<mark class="label info">Vercel</mark>仪表盘点点击进入已部署好的博客项目，点击上方导航栏的<mark class="label ">Analytics</mark>在新的页面中点击<mark class="label ">Web Analytics</mark>下方的<mark class="label success">Enable</mark>，在弹出的页面中选择免费计划并点击<mark class="label success">Enable</mark><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/analytics.png" alt="analytics"><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/enable.png" alt="enable"></p>
-<h2 id="将script添加到Hexo"><a href="#将script添加到Hexo" class="headerlink" title="将script添加到Hexo"></a>将script添加到Hexo</h2><p>在<mark class="label info">\blog\node_modules\hexo-theme-next\scripts\filters</mark>目录下新建<mark class="label ">vercel_analytics.js</mark>文件并复制以下代码到文件中保存</p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">hexo.extend.<span class="built_in">filter</span>.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="keyword">function</span>(<span class="params">injects</span>) &#123;</span><br><span class="line">    injects.bodyEnd.raw(<span class="string">&#x27;vercel-analytics-js&#x27;</span>, <span class="string">&#x27;&lt;script defer src=&quot;/_vercel/insights/script.js&quot;&gt;&lt;/script&gt;&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<p>重新部署后稍等一会就能看到Web Analytics数据</p>
-<div class="note warning"><p>此方法只适用于Next主题，其它主题请自行搜索</p>
-</div>]]></content>
-      <tags>
-        <tag>vercel</tag>
-        <tag>web analytics</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ubuntu切换到root用户及用root用户登录</title>
     <url>/ubuntu%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95.html</url>
     <content><![CDATA[<p>当用安装时的用户名和密码登录到Ubuntu系统，如果想切换到root用户系统会提示：<mark class="label warning">Authentication failure</mark>，这是因为在安装ubuntu系统时设置的用户名和密码并不是root用户的。</p>
@@ -265,6 +243,28 @@
       <tags>
         <tag>ubuntu</tag>
         <tag>root</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo 启用Vercel的Web Analytics</title>
+    <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
+    <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
+<div class="link-grid"><div class="link-grid-container">
+<object class="link-grid-image" data="/images/logo.png"></object>
+<p>优化 Github Pages 国内的访问速度</p><p><mark class="label ">E云笔记</mark> 我的学习笔记</p>
+<a href="https://www.eyunbook.com/优化Github-Pages国内的访问速度.html"></a>
+</div></div>
+<mark class="label info">Vercle</mark>还提供了<mark class="label primary">Web Analytics</mark>功能
+<span id="more"></span>
+<h2 id="开启Web-Analytics"><a href="#开启Web-Analytics" class="headerlink" title="开启Web Analytics"></a>开启Web Analytics</h2><p>在<mark class="label info">Vercel</mark>仪表盘点点击进入已部署好的博客项目，点击上方导航栏的<mark class="label ">Analytics</mark>在新的页面中点击<mark class="label ">Web Analytics</mark>下方的<mark class="label success">Enable</mark>，在弹出的页面中选择免费计划并点击<mark class="label success">Enable</mark><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/analytics.png" alt="analytics"><br><img data-src="/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics/enable.png" alt="enable"></p>
+<h2 id="将script添加到Hexo"><a href="#将script添加到Hexo" class="headerlink" title="将script添加到Hexo"></a>将script添加到Hexo</h2><p>在<mark class="label info">\blog\node_modules\hexo-theme-next\scripts\filters</mark>目录下新建<mark class="label ">vercel_analytics.js</mark>文件并复制以下代码到文件中保存</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">hexo.extend.<span class="built_in">filter</span>.register(<span class="string">&#x27;theme_inject&#x27;</span>, <span class="keyword">function</span>(<span class="params">injects</span>) &#123;</span><br><span class="line">    injects.bodyEnd.raw(<span class="string">&#x27;vercel-analytics-js&#x27;</span>, <span class="string">&#x27;&lt;script defer src=&quot;/_vercel/insights/script.js&quot;&gt;&lt;/script&gt;&#x27;</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>重新部署后稍等一会就能看到Web Analytics数据</p>
+<div class="note warning"><p>此方法只适用于Next主题，其它主题请自行搜索</p>
+</div>]]></content>
+      <tags>
+        <tag>vercel</tag>
+        <tag>web analytics</tag>
       </tags>
   </entry>
   <entry>
@@ -310,32 +310,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用自定义域名访问GitHub Pages</title>
-    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html</url>
-    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
-<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
-<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
-<ul>
-<li>IPv4</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>IPv6</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
-<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
-<li>打开静态网站的存储库</li>
-<li>点击Settings</li>
-<li>在左边栏找到Code and automation，点击下方的Pages</li>
-<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
-</ul>
-<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
-]]></content>
-      <tags>
-        <tag>github pages</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>利用docker的macvlan为qBittorrent设置一个单独的IP</title>
     <url>/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html</url>
     <content><![CDATA[<p>家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代理常用端口可以解决这一问题但并不是我想要的结果。经过一翻Google发现利用docker的macvlan可以为qBittorrent单独设置一个IP地址，这样就可以利用Mihomo的代理黑名单功能让qBittorrent流量不走代理。<span id="more"></span></p>
@@ -374,156 +348,29 @@
       </tags>
   </entry>
   <entry>
-    <title>国内外DNS搜集</title>
-    <url>/%E5%9B%BD%E5%86%85%E5%A4%96DNS%E6%90%9C%E9%9B%86.html</url>
-    <content><![CDATA[<mark class="label ">域名系统</mark>(DNS)会将域名转换为不方便记忆的<mark class="label info">IP地址</mark>，它就好比互联网的电话本。如DNS在域名解析过程中速度慢甚至解析错误会导致网页打开慢、访问失败。如果使用了不安全的DNS服务器，还会遭遇到DNS劫持和污染。<mark class="label danger">DNS劫持</mark>和<mark class="label danger">DNS污染</mark>都会返回错误的IP地址，轻者打不开网页重者可能会窃取用户的<mark class="label warning">密码</mark>、<mark class="label waring">登录凭证</mark>、<mark class="label warning">信用卡</mark>等信息。<span id="more"></span>
-<h2 id="国内DNS"><a href="#国内DNS" class="headerlink" title="国内DNS"></a>国内DNS</h2><h3 id="腾讯-DNS"><a href="#腾讯-DNS" class="headerlink" title="腾讯 DNS"></a>腾讯 DNS</h3><div class="tabs" id="腾讯"><ul class="nav-tabs"><li class="tab active"><a href="#腾讯-1">IPv4</a></li><li class="tab"><a href="#腾讯-2">IPv6</a></li><li class="tab"><a href="#腾讯-3">DoH</a></li><li class="tab"><a href="#腾讯-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="腾讯-1"><p>119.29.29.29</p></div><div class="tab-pane" id="腾讯-2"><p>2402:4e00::<br>2402:4e00:1::</p></div><div class="tab-pane" id="腾讯-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//doh.pub/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//1.12.12.12/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//120.53.53.53/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//sm2.doh.pub/dns-query</span></span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>国密SM2，基于腾讯云政企国密解决方案</p>
-</div></div><div class="tab-pane" id="腾讯-4"><p>dot.pub<br>1.12.12.12<br>120.53.53.53</p></div></div></div>
-
-<h3 id="阿里-DNS"><a href="#阿里-DNS" class="headerlink" title="阿里 DNS"></a>阿里 DNS</h3><div class="tabs" id="阿里"><ul class="nav-tabs"><li class="tab active"><a href="#阿里-1">IPv4</a></li><li class="tab"><a href="#阿里-2">IPv6</a></li><li class="tab"><a href="#阿里-3">DoH</a></li><li class="tab"><a href="#阿里-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="阿里-1"><p>223.5.5.5<br>223.6.6.6</p></div><div class="tab-pane" id="阿里-2"><p>2400:3200::1<br>2400:3200:baba::1</p></div><div class="tab-pane" id="阿里-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.alidns.com/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//223.5.5.5/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//223.6.6.6/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="阿里-4"><p>dns.alidns.com<br>223.5.5.5<br>223.6.6.6</p></div></div></div>
-
-<h3 id="360-DNS"><a href="#360-DNS" class="headerlink" title="360 DNS"></a>360 DNS</h3><div class="tabs" id="360"><ul class="nav-tabs"><li class="tab active"><a href="#360-1">电信、移动、铁通</a></li><li class="tab"><a href="#360-2">联通</a></li><li class="tab"><a href="#360-3">DoH</a></li><li class="tab"><a href="#360-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="360-1"><p>101.226.4.6<br>218.30.118.6</p></div><div class="tab-pane" id="360-2"><p>123.125.81.6<br>140.207.198.6</p></div><div class="tab-pane" id="360-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//doh.360.cn</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="360-4"><p>dot.360.cn</p></div></div></div>
-
-<h3 id="114-DNS"><a href="#114-DNS" class="headerlink" title="114 DNS"></a>114 DNS</h3><div class="tabs" id="114"><ul class="nav-tabs"><li class="tab active"><a href="#114-1">IPv4</a></li><li class="tab"><a href="#114-2">隐私增强</a></li><li class="tab"><a href="#114-3">学校和家长</a></li></ul><div class="tab-content"><div class="tab-pane active" id="114-1"><p>114.114.114.114<br>114.114.115.115</p></div><div class="tab-pane" id="114-2"><p>114.114.114.119<br>114.114.115.119</p>
-<div class="note info"><p>增强网银、证券、购物、游戏、隐私信息安全</p>
-</div></div><div class="tab-pane" id="114-3"><p>114.114.114.110<br>114.114.115.110</p>
-<div class="note info"><p>可拦截色情网站</p>
-</div></div></div></div>
-
-<h3 id="百度-DNS"><a href="#百度-DNS" class="headerlink" title="百度 DNS"></a>百度 DNS</h3><div class="tabs" id="百度"><ul class="nav-tabs"><li class="tab active"><a href="#百度-1">IPv4</a></li><li class="tab"><a href="#百度-2">IPv6</a></li></ul><div class="tab-content"><div class="tab-pane active" id="百度-1"><p>180.76.76.76</p></div><div class="tab-pane" id="百度-2"><p>2400:da00::6666</p></div></div></div>
-
-<h2 id="国外DNS"><a href="#国外DNS" class="headerlink" title="国外DNS"></a>国外DNS</h2><h3 id="Google-DNS"><a href="#Google-DNS" class="headerlink" title="Google DNS"></a>Google DNS</h3><div class="tabs" id="google"><ul class="nav-tabs"><li class="tab active"><a href="#google-1">IPv4</a></li><li class="tab"><a href="#google-2">IPv6</a></li><li class="tab"><a href="#google-3">DoH</a></li><li class="tab"><a href="#google-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="google-1"><p>8.8.8.8<br>8.8.4.4</p></div><div class="tab-pane" id="google-2"><p>2001:4860:4860::8888<br>2001:4860:4860::8844</p></div><div class="tab-pane" id="google-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.google/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//8.8.8.8/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//8.8.4.4/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="google-4"><p>dns.google</p></div></div></div>
-
-<h3 id="Cloudflare-DNS"><a href="#Cloudflare-DNS" class="headerlink" title="Cloudflare DNS"></a>Cloudflare DNS</h3><div class="tabs" id="cloudflare"><ul class="nav-tabs"><li class="tab active"><a href="#cloudflare-1">IPv4</a></li><li class="tab"><a href="#cloudflare-2">IPv6</a></li><li class="tab"><a href="#cloudflare-3">DoH</a></li><li class="tab"><a href="#cloudflare-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cloudflare-1"><p>1.1.1.1<br>1.0.0.1</p>
-<div class="tabs" id="subtabs1"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs1-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs1-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs1-1"><p>1.1.1.2<br>1.0.0.2</p></div><div class="tab-pane" id="subtabs1-2"><p>1.1.1.3<br>1.0.0.3</p></div></div></div></div><div class="tab-pane" id="cloudflare-2"><p>2606:4700:4700::1111<br>2606:4700:4700::1001</p>
-<div class="tabs" id="subtabs2"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs2-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs2-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs2-1"><p>2606:4700:4700::1112<br>2606:4700:4700::1002</p></div><div class="tab-pane" id="subtabs2-2"><p>2606:4700:4700::1113<br>2606:4700:4700::1003</p></div></div></div></div><div class="tab-pane" id="cloudflare-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//cloudflare-dns.com/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//1.1.1.1/dns-query</span></span><br></pre></td></tr></table></figure>
-
-<div class="tabs" id="subtabs3"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs3-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs3-2">成人内容与恶意软件</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs3-1"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//security.cloudflare-dns.com/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="subtabs3-2"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//family.cloudflare-dns.com/dns-query</span></span><br></pre></td></tr></table></figure></div></div></div></div><div class="tab-pane" id="cloudflare-4"><p>one.one.one.one</p>
-<div class="tabs" id="subtabs4"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs4-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs4-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs4-1"><p>security.cloudflare-dns.com</p></div><div class="tab-pane" id="subtabs4-2"><p>family.cloudflare-dns.com</p></div></div></div></div></div></div>
-
-<h3 id="Quad9-DNS"><a href="#Quad9-DNS" class="headerlink" title="Quad9 DNS"></a>Quad9 DNS</h3><div class="tabs" id="quad9"><ul class="nav-tabs"><li class="tab active"><a href="#quad9-1">IPv4</a></li><li class="tab"><a href="#quad9-2">IPv6</a></li><li class="tab"><a href="#quad9-3">DoH</a></li><li class="tab"><a href="#quad9-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="quad9-1"><p>9.9.9.9<br>149.112.112.112</p>
-<div class="tabs" id="subtabs5"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs5-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs5-1"><p>9.9.9.11<br>149.112.112.11</p></div></div></div></div><div class="tab-pane" id="quad9-2"><p>2620:fe::fe<br>2620:fe::9</p>
-<div class="tabs" id="subtabs6"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs6-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs6-1"><p>2620:fe::11<br>2620:fe::fe:11</p></div></div></div></div><div class="tab-pane" id="quad9-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.quad9.net/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//9.9.9.9/dns-query</span></span><br></pre></td></tr></table></figure>
-
-<div class="tabs" id="subtabs7"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs7-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs7-1"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://dns11.quad9.net/dns-query</span><br></pre></td></tr></table></figure></div></div></div></div><div class="tab-pane" id="quad9-4"><p>dns.quad9.net</p>
-<div class="tabs" id="subtabs8"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs8-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs8-1"><p>dns11.quad9.net</p></div></div></div></div></div></div>
-
-<div class="note info"><p>Quad9 DNS默认支持恶意软件阻止和DNSSEC验证</p>
-</div>
-
-<h3 id="AdGuard-DNS"><a href="#AdGuard-DNS" class="headerlink" title="AdGuard DNS"></a>AdGuard DNS</h3><div class="tabs" id="adguard"><ul class="nav-tabs"><li class="tab active"><a href="#adguard-1">IPv4</a></li><li class="tab"><a href="#adguard-2">IPv6</a></li><li class="tab"><a href="#adguard-3">DoH</a></li><li class="tab"><a href="#adguard-4">DoT</a></li><li class="tab"><a href="#adguard-5">QUIC</a></li><li class="tab"><a href="#adguard-6">Crypt</a></li></ul><div class="tab-content"><div class="tab-pane active" id="adguard-1"><p>94.140.14.14<br>94.140.15.15</p>
-<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
-</div>
-
-<div class="tabs" id="subtabs9"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs9-1">无过滤器</a></li><li class="tab"><a href="#subtabs9-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs9-1"><p>94.140.14.140<br>94.140.14.141</p>
-<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
-</div></div><div class="tab-pane" id="subtabs9-2"><p>94.140.14.15<br>94.140.15.16</p>
-<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
-</div></div></div></div></div><div class="tab-pane" id="adguard-2"><p>2a10:50c0::ad1:ff<br>2a10:50c0::ad2:ff</p>
-<div class="note info"><p>默认服务器,拦截广告和跟踪器</p>
-</div>
-
-<div class="tabs" id="subtabs10"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs10-1">无过滤</a></li><li class="tab"><a href="#subtabs10-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs10-1"><p>2a10:50c0::1:ff<br>2a10:50c0::2:ff</p>
-<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
-</div></div><div class="tab-pane" id="subtabs10-2"><p>2a10:50c0::bad1:ff<br>2a10:50c0::bad2:ff</p>
-<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
-</div></div></div></div></div><div class="tab-pane" id="adguard-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.adguard-dns.com/dns-query</span></span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
-</div>
-
-<div class="tabs" id="subtabs11"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs11-1">无过滤</a></li><li class="tab"><a href="#subtabs11-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs11-1"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//unfiltered.adguard-dns.com/dns-query</span></span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
-</div></div><div class="tab-pane" id="subtabs11-2"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//family.adguard-dns.com/dns-query</span></span><br></pre></td></tr></table></figure>
-
-<div class="note info"><p>家庭保护服务器， 拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
-</div></div></div></div></div><div class="tab-pane" id="adguard-4"><p>dns.adguard-dns.com</p>
-<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
-</div>
-
-<div class="tabs" id="subtabs12"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs12-1">无过滤</a></li><li class="tab"><a href="#subtabs12-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs12-1"><p>unfiltered.adguard-dns.com</p>
-<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
-</div></div><div class="tab-pane" id="subtabs12-2"><p>family.adguard-dns.com</p>
-<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
-</div></div></div></div></div><div class="tab-pane" id="adguard-5"><p>quic:&#x2F;&#x2F;dns.adguard-dns.com</p>
-<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
-</div>
-
-<div class="tabs" id="subtabs13"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs13-1">无过滤</a></li><li class="tab"><a href="#subtabs13-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs13-1"><p>quic:&#x2F;&#x2F;unfiltered.adguard-dns.com</p>
-<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
-</div></div><div class="tab-pane" id="subtabs13-2"><p>quic:&#x2F;&#x2F;family.adguard-dns.com</p>
-<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
-</div></div></div></div></div><div class="tab-pane" id="adguard-6"><p>sdns:&#x2F;&#x2F;AQMAAAAAAAAAETk0LjE0MC4xNC4xNDo1NDQzINErR_JS3PLCu_iZEIbq95zkSV2LFsigxDIuUso_OQhzIjIuZG5zY3J5cHQuZGVmYXVsdC5uczEuYWRndWFyZC5jb20</p>
-<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
-</div>
-
-<div class="tabs" id="subtabs14"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs14-1">无过滤</a></li><li class="tab"><a href="#subtabs14-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs14-1"><p>sdns:&#x2F;&#x2F;AQMAAAAAAAAAEjk0LjE0MC4xNC4xNDA6NTQ0MyC16ETWuDo-PhJo62gfvqcN48X6aNvWiBQdvy7AZrLa-iUyLmRuc2NyeXB0LnVuZmlsdGVyZWQubnMxLmFkZ3VhcmQuY29t</p>
-<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
-</div></div><div class="tab-pane" id="subtabs14-2"><p>sdns:&#x2F;&#x2F;AQMAAAAAAAAAETk0LjE0MC4xNC4xNTo1NDQzILgxXdexS27jIKRw3C7Wsao5jMnlhvhdRUXWuMm1AFq6ITIuZG5zY3J5cHQuZmFtaWx5Lm5zMS5hZGd1YXJkLmNvbQ</p>
-<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
-</div></div></div></div></div></div></div>]]></content>
-      <tags>
-        <tag>dns</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Ubuntu 24.04 中添加非root用户并授予sudo权限</title>
-    <url>/%E5%9C%A8Ubuntu-24-04-%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E5%B9%B6%E6%8E%88%E4%BA%88sudo%E6%9D%83%E9%99%90.html</url>
-    <content><![CDATA[<p>很多VPS默认的用户名为root，但有的时候我们需要非root用户的环境，比如说编译OpenWrt就需要非root用户。<span id="more"></span></p>
-<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>以root用户身份登录，通过以下命令新建用户：</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">adduser </span>username    <span class="comment"># 将username替换为自己的用户名</span></span><br></pre></td></tr></table></figure>
-<p>回车后首先输入新用户的密码，并确认密码：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">New</span> password:</span><br><span class="line">Retype <span class="keyword">new</span> password:</span><br></pre></td></tr></table></figure>
-<p>剩下的一路回车即可，完成后系统会提示：</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">info</span>: Adding <span class="built_in">new</span> <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> supplemental / extra <span class="keyword">groups</span> <span class="string">&#x27;users&#x27;</span></span><br><span class="line"><span class="keyword">info</span>: Adding <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> <span class="keyword">group</span> <span class="string">&#x27;users&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="授予新用户sudo权限"><a href="#授予新用户sudo权限" class="headerlink" title="授予新用户sudo权限"></a>授予新用户sudo权限</h2><p>授予新用户sudo权限有两种方法</p>
-<h3 id="一、将新用户添加到sudo组"><a href="#一、将新用户添加到sudo组" class="headerlink" title="一、将新用户添加到sudo组"></a>一、将新用户添加到sudo组</h3><p>使用以下命令将新用户添加到sudo组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod -aG <span class="built_in">sudo</span> username</span><br></pre></td></tr></table></figure>
-<h3 id="二、编辑-etc-sudoers文件"><a href="#二、编辑-etc-sudoers文件" class="headerlink" title="二、编辑&#x2F;etc&#x2F;sudoers文件"></a>二、编辑&#x2F;etc&#x2F;sudoers文件</h3><p>使用<mark class="label info">visudo</mark>命令可以打开系统默认的编辑器编辑配置文件<mark class="label ">/etc/sudoers</mark>，在<mark class="label ">/etc/sudoers</mark>中找到<mark class="label primary">root ALL=(ALL:ALL) ALL</mark>，在此行下方添加<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>，保存后退出</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">visudo</span><br><span class="line">root    <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br><span class="line">username <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
-<h2 id="测试新用户的sudo权限"><a href="#测试新用户的sudo权限" class="headerlink" title="测试新用户的sudo权限"></a>测试新用户的sudo权限</h2><p>以新用户身份登录，输入以下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
-<p>输入密码后命令能够正确执行说明新用户添加成功并获得了sudo权限</p>
-<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>以root用户身份登录并输入以下命令：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deluser username</span></span><br></pre></td></tr></table></figure>
-<p>删除用户的同时删除用户的主目录</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">deluser --remove-home username</span><br></pre></td></tr></table></figure>
-<p>如果是通过编辑<mark class="label info">/etc/sudoers</mark>获得的sudo权限，还需要使用<mark class="label info">visudo</mark>命令将<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>删除掉。</p>
+    <title>使用自定义域名访问GitHub Pages</title>
+    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html</url>
+    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
+<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
+<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
+<ul>
+<li>IPv4</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>IPv6</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
+<li>打开静态网站的存储库</li>
+<li>点击Settings</li>
+<li>在左边栏找到Code and automation，点击下方的Pages</li>
+<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
+</ul>
+<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
 ]]></content>
       <tags>
-        <tag>root</tag>
-        <tag>Ubuntu24.04</tag>
-        <tag>sudo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浏览器关闭QUIC协议</title>
-    <url>/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE.html</url>
-    <content><![CDATA[<mark class="label ">QUIC</mark>(Quick UDP Internet Connection)是一个通用的传输层网络协议，由<mark class="label info">Google</mark>公司的<mark class="label primary">Jim Roskind</mark>设计，从Chrome浏览器到Google服务器的连接中超过一半的连接都使用了QUIC，QUIC通过UDP协议在两个端点之间建立若干个多路连接，从而提高了网络连接的可靠性并能够有效的<mark>降低传输延时和避免网络拥堵</mark>。QUIC还能<mark class="label success">提高网络切换时的性能</mark>，当设备从WIFI切换到移动网络时，TCP协议会等以前的WIFI连接超时后才会和移动网建立新的连接，因而存在较高的延迟，而QUIC会包含一个<mark class="label info">标识符</mark>，这是客户端和服务器之间连接的<mark class="label primary">唯一标识</mark>，当用户IP地址发生变化时原始ID仍然有效，所以只需发送一个包含原始ID的数据包即可重新建立连接。
-<p>然而在国内各大电信运营都面临着巨大的带宽压力，为了保障用户的体验，运营商们会对UDP流量进行限制，例如丢包、低先先级队列和限速等。因此就目前的国内网络环境还是<mark class="label waring">关闭QUIC协议</mark>比较好一点。<span id="more"></span></p>
-<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Chome</a></li><li class="tab"><a href="#first-tab-2">Firefox</a></li><li class="tab"><a href="#first-tab-3">Microsoft Edeg</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><ul>
-<li>地址栏输入：chrome:&#x2F;&#x2F;flags</li>
-<li>搜索框输入：quic</li>
-<li>将<mark class="label info">Experimental QUIC protocol</mark>设置为<mark class="label waring">Disable</mark></li>
-<li>重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/chrome.png" class=""></li>
-</ul></div><div class="tab-pane" id="first-tab-2"><ul>
-<li>地址栏输入：about:config并回车</li>
-<li>搜索框输入：<mark class="label info">network.http.http3.enabled</mark></li>
-<li>选中布尔选项，单击+号，双击<mark class="label waring">true</mark>变成<mark>false</mark>，重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/firefox-1.png" class=""></li>
-</ul></div><div class="tab-pane" id="first-tab-3"><ul>
-<li>地址栏输入：edge:&#x2F;&#x2F;flags</li>
-<li>搜索框输入：<mark class="label info">Experimental QUIC protocol</mark></li>
-<li>设置为<mark class="label waring">Disable</mark></li>
-<li>重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/edge.png" class=""></li>
-</ul></div></div></div>]]></content>
-      <tags>
-        <tag>QUIC</tag>
-        <tag>Chrome</tag>
-        <tag>Firefox</tag>
-        <tag>Microsoft Edge</tag>
+        <tag>github pages</tag>
       </tags>
   </entry>
   <entry>
@@ -709,6 +556,159 @@
         <tag>广告拦截</tag>
         <tag>自动化</tag>
         <tag>规则更新</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>国内外DNS搜集</title>
+    <url>/%E5%9B%BD%E5%86%85%E5%A4%96DNS%E6%90%9C%E9%9B%86.html</url>
+    <content><![CDATA[<mark class="label ">域名系统</mark>(DNS)会将域名转换为不方便记忆的<mark class="label info">IP地址</mark>，它就好比互联网的电话本。如DNS在域名解析过程中速度慢甚至解析错误会导致网页打开慢、访问失败。如果使用了不安全的DNS服务器，还会遭遇到DNS劫持和污染。<mark class="label danger">DNS劫持</mark>和<mark class="label danger">DNS污染</mark>都会返回错误的IP地址，轻者打不开网页重者可能会窃取用户的<mark class="label warning">密码</mark>、<mark class="label waring">登录凭证</mark>、<mark class="label warning">信用卡</mark>等信息。<span id="more"></span>
+<h2 id="国内DNS"><a href="#国内DNS" class="headerlink" title="国内DNS"></a>国内DNS</h2><h3 id="腾讯-DNS"><a href="#腾讯-DNS" class="headerlink" title="腾讯 DNS"></a>腾讯 DNS</h3><div class="tabs" id="腾讯"><ul class="nav-tabs"><li class="tab active"><a href="#腾讯-1">IPv4</a></li><li class="tab"><a href="#腾讯-2">IPv6</a></li><li class="tab"><a href="#腾讯-3">DoH</a></li><li class="tab"><a href="#腾讯-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="腾讯-1"><p>119.29.29.29</p></div><div class="tab-pane" id="腾讯-2"><p>2402:4e00::<br>2402:4e00:1::</p></div><div class="tab-pane" id="腾讯-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//doh.pub/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//1.12.12.12/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//120.53.53.53/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//sm2.doh.pub/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>国密SM2，基于腾讯云政企国密解决方案</p>
+</div></div><div class="tab-pane" id="腾讯-4"><p>dot.pub<br>1.12.12.12<br>120.53.53.53</p></div></div></div>
+
+<h3 id="阿里-DNS"><a href="#阿里-DNS" class="headerlink" title="阿里 DNS"></a>阿里 DNS</h3><div class="tabs" id="阿里"><ul class="nav-tabs"><li class="tab active"><a href="#阿里-1">IPv4</a></li><li class="tab"><a href="#阿里-2">IPv6</a></li><li class="tab"><a href="#阿里-3">DoH</a></li><li class="tab"><a href="#阿里-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="阿里-1"><p>223.5.5.5<br>223.6.6.6</p></div><div class="tab-pane" id="阿里-2"><p>2400:3200::1<br>2400:3200:baba::1</p></div><div class="tab-pane" id="阿里-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.alidns.com/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//223.5.5.5/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//223.6.6.6/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="阿里-4"><p>dns.alidns.com<br>223.5.5.5<br>223.6.6.6</p></div></div></div>
+
+<h3 id="360-DNS"><a href="#360-DNS" class="headerlink" title="360 DNS"></a>360 DNS</h3><div class="tabs" id="360"><ul class="nav-tabs"><li class="tab active"><a href="#360-1">电信、移动、铁通</a></li><li class="tab"><a href="#360-2">联通</a></li><li class="tab"><a href="#360-3">DoH</a></li><li class="tab"><a href="#360-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="360-1"><p>101.226.4.6<br>218.30.118.6</p></div><div class="tab-pane" id="360-2"><p>123.125.81.6<br>140.207.198.6</p></div><div class="tab-pane" id="360-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//doh.360.cn</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="360-4"><p>dot.360.cn</p></div></div></div>
+
+<h3 id="114-DNS"><a href="#114-DNS" class="headerlink" title="114 DNS"></a>114 DNS</h3><div class="tabs" id="114"><ul class="nav-tabs"><li class="tab active"><a href="#114-1">IPv4</a></li><li class="tab"><a href="#114-2">隐私增强</a></li><li class="tab"><a href="#114-3">学校和家长</a></li></ul><div class="tab-content"><div class="tab-pane active" id="114-1"><p>114.114.114.114<br>114.114.115.115</p></div><div class="tab-pane" id="114-2"><p>114.114.114.119<br>114.114.115.119</p>
+<div class="note info"><p>增强网银、证券、购物、游戏、隐私信息安全</p>
+</div></div><div class="tab-pane" id="114-3"><p>114.114.114.110<br>114.114.115.110</p>
+<div class="note info"><p>可拦截色情网站</p>
+</div></div></div></div>
+
+<h3 id="百度-DNS"><a href="#百度-DNS" class="headerlink" title="百度 DNS"></a>百度 DNS</h3><div class="tabs" id="百度"><ul class="nav-tabs"><li class="tab active"><a href="#百度-1">IPv4</a></li><li class="tab"><a href="#百度-2">IPv6</a></li></ul><div class="tab-content"><div class="tab-pane active" id="百度-1"><p>180.76.76.76</p></div><div class="tab-pane" id="百度-2"><p>2400:da00::6666</p></div></div></div>
+
+<h2 id="国外DNS"><a href="#国外DNS" class="headerlink" title="国外DNS"></a>国外DNS</h2><h3 id="Google-DNS"><a href="#Google-DNS" class="headerlink" title="Google DNS"></a>Google DNS</h3><div class="tabs" id="google"><ul class="nav-tabs"><li class="tab active"><a href="#google-1">IPv4</a></li><li class="tab"><a href="#google-2">IPv6</a></li><li class="tab"><a href="#google-3">DoH</a></li><li class="tab"><a href="#google-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="google-1"><p>8.8.8.8<br>8.8.4.4</p></div><div class="tab-pane" id="google-2"><p>2001:4860:4860::8888<br>2001:4860:4860::8844</p></div><div class="tab-pane" id="google-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.google/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//8.8.8.8/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//8.8.4.4/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="google-4"><p>dns.google</p></div></div></div>
+
+<h3 id="Cloudflare-DNS"><a href="#Cloudflare-DNS" class="headerlink" title="Cloudflare DNS"></a>Cloudflare DNS</h3><div class="tabs" id="cloudflare"><ul class="nav-tabs"><li class="tab active"><a href="#cloudflare-1">IPv4</a></li><li class="tab"><a href="#cloudflare-2">IPv6</a></li><li class="tab"><a href="#cloudflare-3">DoH</a></li><li class="tab"><a href="#cloudflare-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="cloudflare-1"><p>1.1.1.1<br>1.0.0.1</p>
+<div class="tabs" id="subtabs1"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs1-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs1-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs1-1"><p>1.1.1.2<br>1.0.0.2</p></div><div class="tab-pane" id="subtabs1-2"><p>1.1.1.3<br>1.0.0.3</p></div></div></div></div><div class="tab-pane" id="cloudflare-2"><p>2606:4700:4700::1111<br>2606:4700:4700::1001</p>
+<div class="tabs" id="subtabs2"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs2-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs2-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs2-1"><p>2606:4700:4700::1112<br>2606:4700:4700::1002</p></div><div class="tab-pane" id="subtabs2-2"><p>2606:4700:4700::1113<br>2606:4700:4700::1003</p></div></div></div></div><div class="tab-pane" id="cloudflare-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//cloudflare-dns.com/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//1.1.1.1/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="tabs" id="subtabs3"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs3-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs3-2">成人内容与恶意软件</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs3-1"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//security.cloudflare-dns.com/dns-query</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="subtabs3-2"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//family.cloudflare-dns.com/dns-query</span></span><br></pre></td></tr></table></figure></div></div></div></div><div class="tab-pane" id="cloudflare-4"><p>one.one.one.one</p>
+<div class="tabs" id="subtabs4"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs4-1">阻止恶意软件</a></li><li class="tab"><a href="#subtabs4-2">阻止恶意软件和成人内容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs4-1"><p>security.cloudflare-dns.com</p></div><div class="tab-pane" id="subtabs4-2"><p>family.cloudflare-dns.com</p></div></div></div></div></div></div>
+
+<h3 id="Quad9-DNS"><a href="#Quad9-DNS" class="headerlink" title="Quad9 DNS"></a>Quad9 DNS</h3><div class="tabs" id="quad9"><ul class="nav-tabs"><li class="tab active"><a href="#quad9-1">IPv4</a></li><li class="tab"><a href="#quad9-2">IPv6</a></li><li class="tab"><a href="#quad9-3">DoH</a></li><li class="tab"><a href="#quad9-4">DoT</a></li></ul><div class="tab-content"><div class="tab-pane active" id="quad9-1"><p>9.9.9.9<br>149.112.112.112</p>
+<div class="tabs" id="subtabs5"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs5-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs5-1"><p>9.9.9.11<br>149.112.112.11</p></div></div></div></div><div class="tab-pane" id="quad9-2"><p>2620:fe::fe<br>2620:fe::9</p>
+<div class="tabs" id="subtabs6"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs6-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs6-1"><p>2620:fe::11<br>2620:fe::fe:11</p></div></div></div></div><div class="tab-pane" id="quad9-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.quad9.net/dns-query</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//9.9.9.9/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="tabs" id="subtabs7"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs7-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs7-1"><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://dns11.quad9.net/dns-query</span><br></pre></td></tr></table></figure></div></div></div></div><div class="tab-pane" id="quad9-4"><p>dns.quad9.net</p>
+<div class="tabs" id="subtabs8"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs8-1">启用ECS</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs8-1"><p>dns11.quad9.net</p></div></div></div></div></div></div>
+
+<div class="note info"><p>Quad9 DNS默认支持恶意软件阻止和DNSSEC验证</p>
+</div>
+
+<h3 id="AdGuard-DNS"><a href="#AdGuard-DNS" class="headerlink" title="AdGuard DNS"></a>AdGuard DNS</h3><div class="tabs" id="adguard"><ul class="nav-tabs"><li class="tab active"><a href="#adguard-1">IPv4</a></li><li class="tab"><a href="#adguard-2">IPv6</a></li><li class="tab"><a href="#adguard-3">DoH</a></li><li class="tab"><a href="#adguard-4">DoT</a></li><li class="tab"><a href="#adguard-5">QUIC</a></li><li class="tab"><a href="#adguard-6">Crypt</a></li></ul><div class="tab-content"><div class="tab-pane active" id="adguard-1"><p>94.140.14.14<br>94.140.15.15</p>
+<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
+</div>
+
+<div class="tabs" id="subtabs9"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs9-1">无过滤器</a></li><li class="tab"><a href="#subtabs9-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs9-1"><p>94.140.14.140<br>94.140.14.141</p>
+<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
+</div></div><div class="tab-pane" id="subtabs9-2"><p>94.140.14.15<br>94.140.15.16</p>
+<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
+</div></div></div></div></div><div class="tab-pane" id="adguard-2"><p>2a10:50c0::ad1:ff<br>2a10:50c0::ad2:ff</p>
+<div class="note info"><p>默认服务器,拦截广告和跟踪器</p>
+</div>
+
+<div class="tabs" id="subtabs10"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs10-1">无过滤</a></li><li class="tab"><a href="#subtabs10-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs10-1"><p>2a10:50c0::1:ff<br>2a10:50c0::2:ff</p>
+<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
+</div></div><div class="tab-pane" id="subtabs10-2"><p>2a10:50c0::bad1:ff<br>2a10:50c0::bad2:ff</p>
+<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
+</div></div></div></div></div><div class="tab-pane" id="adguard-3"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//dns.adguard-dns.com/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
+</div>
+
+<div class="tabs" id="subtabs11"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs11-1">无过滤</a></li><li class="tab"><a href="#subtabs11-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs11-1"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//unfiltered.adguard-dns.com/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
+</div></div><div class="tab-pane" id="subtabs11-2"><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">https:</span><span class="comment">//family.adguard-dns.com/dns-query</span></span><br></pre></td></tr></table></figure>
+
+<div class="note info"><p>家庭保护服务器， 拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
+</div></div></div></div></div><div class="tab-pane" id="adguard-4"><p>dns.adguard-dns.com</p>
+<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
+</div>
+
+<div class="tabs" id="subtabs12"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs12-1">无过滤</a></li><li class="tab"><a href="#subtabs12-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs12-1"><p>unfiltered.adguard-dns.com</p>
+<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
+</div></div><div class="tab-pane" id="subtabs12-2"><p>family.adguard-dns.com</p>
+<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
+</div></div></div></div></div><div class="tab-pane" id="adguard-5"><p>quic:&#x2F;&#x2F;dns.adguard-dns.com</p>
+<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
+</div>
+
+<div class="tabs" id="subtabs13"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs13-1">无过滤</a></li><li class="tab"><a href="#subtabs13-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs13-1"><p>quic:&#x2F;&#x2F;unfiltered.adguard-dns.com</p>
+<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
+</div></div><div class="tab-pane" id="subtabs13-2"><p>quic:&#x2F;&#x2F;family.adguard-dns.com</p>
+<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
+</div></div></div></div></div><div class="tab-pane" id="adguard-6"><p>sdns:&#x2F;&#x2F;AQMAAAAAAAAAETk0LjE0MC4xNC4xNDo1NDQzINErR_JS3PLCu_iZEIbq95zkSV2LFsigxDIuUso_OQhzIjIuZG5zY3J5cHQuZGVmYXVsdC5uczEuYWRndWFyZC5jb20</p>
+<div class="note info"><p>默认服务器，拦截广告和跟踪器</p>
+</div>
+
+<div class="tabs" id="subtabs14"><ul class="nav-tabs"><li class="tab active"><a href="#subtabs14-1">无过滤</a></li><li class="tab"><a href="#subtabs14-2">家庭保护</a></li></ul><div class="tab-content"><div class="tab-pane active" id="subtabs14-1"><p>sdns:&#x2F;&#x2F;AQMAAAAAAAAAEjk0LjE0MC4xNC4xNDA6NTQ0MyC16ETWuDo-PhJo62gfvqcN48X6aNvWiBQdvy7AZrLa-iUyLmRuc2NyeXB0LnVuZmlsdGVyZWQubnMxLmFkZ3VhcmQuY29t</p>
+<div class="note info"><p>无过滤服务器，不拦截广告、跟踪器</p>
+</div></div><div class="tab-pane" id="subtabs14-2"><p>sdns:&#x2F;&#x2F;AQMAAAAAAAAAETk0LjE0MC4xNC4xNTo1NDQzILgxXdexS27jIKRw3C7Wsao5jMnlhvhdRUXWuMm1AFq6ITIuZG5zY3J5cHQuZmFtaWx5Lm5zMS5hZGd1YXJkLmNvbQ</p>
+<div class="note info"><p>家庭保护服务器，拦截广告、跟踪器、成人内容，并在可能的情况下启用安全搜索和安全模式</p>
+</div></div></div></div></div></div></div>]]></content>
+      <tags>
+        <tag>dns</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在Ubuntu 24.04 中添加非root用户并授予sudo权限</title>
+    <url>/%E5%9C%A8Ubuntu-24-04-%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E5%B9%B6%E6%8E%88%E4%BA%88sudo%E6%9D%83%E9%99%90.html</url>
+    <content><![CDATA[<p>很多VPS默认的用户名为root，但有的时候我们需要非root用户的环境，比如说编译OpenWrt就需要非root用户。<span id="more"></span></p>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>以root用户身份登录，通过以下命令新建用户：</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">adduser </span>username    <span class="comment"># 将username替换为自己的用户名</span></span><br></pre></td></tr></table></figure>
+<p>回车后首先输入新用户的密码，并确认密码：</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">New</span> password:</span><br><span class="line">Retype <span class="keyword">new</span> password:</span><br></pre></td></tr></table></figure>
+<p>剩下的一路回车即可，完成后系统会提示：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">info</span>: Adding <span class="built_in">new</span> <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> supplemental / extra <span class="keyword">groups</span> <span class="string">&#x27;users&#x27;</span></span><br><span class="line"><span class="keyword">info</span>: Adding <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> <span class="keyword">group</span> <span class="string">&#x27;users&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="授予新用户sudo权限"><a href="#授予新用户sudo权限" class="headerlink" title="授予新用户sudo权限"></a>授予新用户sudo权限</h2><p>授予新用户sudo权限有两种方法</p>
+<h3 id="一、将新用户添加到sudo组"><a href="#一、将新用户添加到sudo组" class="headerlink" title="一、将新用户添加到sudo组"></a>一、将新用户添加到sudo组</h3><p>使用以下命令将新用户添加到sudo组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod -aG <span class="built_in">sudo</span> username</span><br></pre></td></tr></table></figure>
+<h3 id="二、编辑-etc-sudoers文件"><a href="#二、编辑-etc-sudoers文件" class="headerlink" title="二、编辑&#x2F;etc&#x2F;sudoers文件"></a>二、编辑&#x2F;etc&#x2F;sudoers文件</h3><p>使用<mark class="label info">visudo</mark>命令可以打开系统默认的编辑器编辑配置文件<mark class="label ">/etc/sudoers</mark>，在<mark class="label ">/etc/sudoers</mark>中找到<mark class="label primary">root ALL=(ALL:ALL) ALL</mark>，在此行下方添加<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>，保存后退出</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">visudo</span><br><span class="line">root    <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br><span class="line">username <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
+<h2 id="测试新用户的sudo权限"><a href="#测试新用户的sudo权限" class="headerlink" title="测试新用户的sudo权限"></a>测试新用户的sudo权限</h2><p>以新用户身份登录，输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
+<p>输入密码后命令能够正确执行说明新用户添加成功并获得了sudo权限</p>
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>以root用户身份登录并输入以下命令：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deluser username</span></span><br></pre></td></tr></table></figure>
+<p>删除用户的同时删除用户的主目录</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">deluser --remove-home username</span><br></pre></td></tr></table></figure>
+<p>如果是通过编辑<mark class="label info">/etc/sudoers</mark>获得的sudo权限，还需要使用<mark class="label info">visudo</mark>命令将<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>删除掉。</p>
+]]></content>
+      <tags>
+        <tag>root</tag>
+        <tag>Ubuntu24.04</tag>
+        <tag>sudo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器关闭QUIC协议</title>
+    <url>/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE.html</url>
+    <content><![CDATA[<mark class="label ">QUIC</mark>(Quick UDP Internet Connection)是一个通用的传输层网络协议，由<mark class="label info">Google</mark>公司的<mark class="label primary">Jim Roskind</mark>设计，从Chrome浏览器到Google服务器的连接中超过一半的连接都使用了QUIC，QUIC通过UDP协议在两个端点之间建立若干个多路连接，从而提高了网络连接的可靠性并能够有效的<mark>降低传输延时和避免网络拥堵</mark>。QUIC还能<mark class="label success">提高网络切换时的性能</mark>，当设备从WIFI切换到移动网络时，TCP协议会等以前的WIFI连接超时后才会和移动网建立新的连接，因而存在较高的延迟，而QUIC会包含一个<mark class="label info">标识符</mark>，这是客户端和服务器之间连接的<mark class="label primary">唯一标识</mark>，当用户IP地址发生变化时原始ID仍然有效，所以只需发送一个包含原始ID的数据包即可重新建立连接。
+<p>然而在国内各大电信运营都面临着巨大的带宽压力，为了保障用户的体验，运营商们会对UDP流量进行限制，例如丢包、低先先级队列和限速等。因此就目前的国内网络环境还是<mark class="label waring">关闭QUIC协议</mark>比较好一点。<span id="more"></span></p>
+<div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">Chome</a></li><li class="tab"><a href="#first-tab-2">Firefox</a></li><li class="tab"><a href="#first-tab-3">Microsoft Edeg</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><ul>
+<li>地址栏输入：chrome:&#x2F;&#x2F;flags</li>
+<li>搜索框输入：quic</li>
+<li>将<mark class="label info">Experimental QUIC protocol</mark>设置为<mark class="label waring">Disable</mark></li>
+<li>重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/chrome.png" class=""></li>
+</ul></div><div class="tab-pane" id="first-tab-2"><ul>
+<li>地址栏输入：about:config并回车</li>
+<li>搜索框输入：<mark class="label info">network.http.http3.enabled</mark></li>
+<li>选中布尔选项，单击+号，双击<mark class="label waring">true</mark>变成<mark>false</mark>，重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/firefox-1.png" class=""></li>
+</ul></div><div class="tab-pane" id="first-tab-3"><ul>
+<li>地址栏输入：edge:&#x2F;&#x2F;flags</li>
+<li>搜索框输入：<mark class="label info">Experimental QUIC protocol</mark></li>
+<li>设置为<mark class="label waring">Disable</mark></li>
+<li>重启浏览器<img data-src="/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%B3%E9%97%ADQUIC%E5%8D%8F%E8%AE%AE/edge.png" class=""></li>
+</ul></div></div></div>]]></content>
+      <tags>
+        <tag>QUIC</tag>
+        <tag>Chrome</tag>
+        <tag>Firefox</tag>
+        <tag>Microsoft Edge</tag>
       </tags>
   </entry>
 </search>
