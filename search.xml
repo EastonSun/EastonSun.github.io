@@ -224,28 +224,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ubuntu切换到root用户及用root用户登录</title>
-    <url>/ubuntu%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95.html</url>
-    <content><![CDATA[<p>当用安装时的用户名和密码登录到Ubuntu系统，如果想切换到root用户系统会提示：<mark class="label warning">Authentication failure</mark>，这是因为在安装ubuntu系统时设置的用户名和密码并不是root用户的。</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">username<span class="variable">@ubuntu</span><span class="symbol">:~</span><span class="variable">$ </span>su root</span><br><span class="line"><span class="symbol">password:</span></span><br><span class="line"><span class="symbol">su:</span> <span class="title class_">Authentication</span> failure</span><br></pre></td></tr></table></figure>
-<p>这时我们就需要启用root用户并设置密码。<span id="more"></span></p>
-<h2 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">sudo</span> <span class="string">passwd</span> <span class="string">root</span></span><br><span class="line">[<span class="string">sudo</span>] <span class="attr">password for username:</span> <span class="comment"># 输入当前用户的密码</span></span><br><span class="line"><span class="attr">New password:</span> <span class="comment"># 输入root的密码</span></span><br><span class="line"><span class="attr">Retype new password:</span> <span class="comment"># 再次输入root的密码</span></span><br><span class="line"><span class="attr">passwd:</span> <span class="string">password</span> <span class="string">updated</span> <span class="string">successfully</span> <span class="comment"># 密码设置成功</span></span><br></pre></td></tr></table></figure>
-<h2 id="修改sshd-config文件"><a href="#修改sshd-config文件" class="headerlink" title="修改sshd_config文件"></a>修改sshd_config文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-<p>将<mark class="label info">PermitRootLogin</mark>的参数设置为<mark>yes</mark></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">PermitRootLogin</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
-<p>保存退出后重启ssh服务</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>此时可以顺便把ssh端口改掉<br>将：</p>
-<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#Port 22</span></span><br></pre></td></tr></table></figure>
-<p>修改为：</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Port</span> <span class="comment">#新端口号</span></span><br></pre></td></tr></table></figure></div>
-<h2 id="root用户和普通用户的切换"><a href="#root用户和普通用户的切换" class="headerlink" title="root用户和普通用户的切换"></a>root用户和普通用户的切换</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">root切换到普通户</a></li><li class="tab"><a href="#first-tab-2">普通用户切换到root</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">su username</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">su root</span><br><span class="line"><span class="symbol">Password:</span> <span class="meta"># 输入root密码</span></span><br></pre></td></tr></table></figure></div></div></div>]]></content>
-      <tags>
-        <tag>ubuntu</tag>
-        <tag>root</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo 启用Vercel的Web Analytics</title>
     <url>/hexo-%E5%90%AF%E7%94%A8Vercel%E7%9A%84Web-Analytics.html</url>
     <content><![CDATA[<p>前面一篇文章介绍过把博客部署到<mark class="label info">Vercel</mark></p>
@@ -265,6 +243,28 @@
       <tags>
         <tag>vercel</tag>
         <tag>web analytics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu切换到root用户及用root用户登录</title>
+    <url>/ubuntu%E5%88%87%E6%8D%A2%E5%88%B0root%E7%94%A8%E6%88%B7%E5%8F%8A%E7%94%A8root%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95.html</url>
+    <content><![CDATA[<p>当用安装时的用户名和密码登录到Ubuntu系统，如果想切换到root用户系统会提示：<mark class="label warning">Authentication failure</mark>，这是因为在安装ubuntu系统时设置的用户名和密码并不是root用户的。</p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">username<span class="variable">@ubuntu</span><span class="symbol">:~</span><span class="variable">$ </span>su root</span><br><span class="line"><span class="symbol">password:</span></span><br><span class="line"><span class="symbol">su:</span> <span class="title class_">Authentication</span> failure</span><br></pre></td></tr></table></figure>
+<p>这时我们就需要启用root用户并设置密码。<span id="more"></span></p>
+<h2 id="设置root密码"><a href="#设置root密码" class="headerlink" title="设置root密码"></a>设置root密码</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">sudo</span> <span class="string">passwd</span> <span class="string">root</span></span><br><span class="line">[<span class="string">sudo</span>] <span class="attr">password for username:</span> <span class="comment"># 输入当前用户的密码</span></span><br><span class="line"><span class="attr">New password:</span> <span class="comment"># 输入root的密码</span></span><br><span class="line"><span class="attr">Retype new password:</span> <span class="comment"># 再次输入root的密码</span></span><br><span class="line"><span class="attr">passwd:</span> <span class="string">password</span> <span class="string">updated</span> <span class="string">successfully</span> <span class="comment"># 密码设置成功</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改sshd-config文件"><a href="#修改sshd-config文件" class="headerlink" title="修改sshd_config文件"></a>修改sshd_config文件</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>将<mark class="label info">PermitRootLogin</mark>的参数设置为<mark>yes</mark></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">PermitRootLogin</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
+<p>保存退出后重启ssh服务</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>此时可以顺便把ssh端口改掉<br>将：</p>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#Port 22</span></span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Port</span> <span class="comment">#新端口号</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="root用户和普通用户的切换"><a href="#root用户和普通用户的切换" class="headerlink" title="root用户和普通用户的切换"></a>root用户和普通用户的切换</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">root切换到普通户</a></li><li class="tab"><a href="#first-tab-2">普通用户切换到root</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">su username</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">su root</span><br><span class="line"><span class="symbol">Password:</span> <span class="meta"># 输入root密码</span></span><br></pre></td></tr></table></figure></div></div></div>]]></content>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>root</tag>
       </tags>
   </entry>
   <entry>
@@ -310,6 +310,32 @@
       </tags>
   </entry>
   <entry>
+    <title>使用自定义域名访问GitHub Pages</title>
+    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html</url>
+    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
+<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
+<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
+<ul>
+<li>IPv4</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>IPv6</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
+<li>打开静态网站的存储库</li>
+<li>点击Settings</li>
+<li>在左边栏找到Code and automation，点击下方的Pages</li>
+<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
+</ul>
+<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
+]]></content>
+      <tags>
+        <tag>github pages</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>利用docker的macvlan为qBittorrent设置一个单独的IP</title>
     <url>/%E5%88%A9%E7%94%A8docker%E7%9A%84macvlan%E4%B8%BAqBittorrent%E8%AE%BE%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%8D%95%E7%8B%AC%E7%9A%84IP.html</url>
     <content><![CDATA[<p>家里有一台N305的软路由，分别安装了OpenWrt(192.168.31.1)，群晖(192.168.31.2)，Ubuntu24.04(192.168.31.3)，qBittorrent安装到了群晖的docker，OpenWrt安装了Mihomo，在实际使用过程中发现如果开启了代理全部端口qBittorrent的流量会经过代理服务器，在流量不多的情况下很快就会跑完代理服务器的流量，虽然开启只代理常用端口可以解决这一问题但并不是我想要的结果。经过一翻Google发现利用docker的macvlan可以为qBittorrent单独设置一个IP地址，这样就可以利用Mihomo的代理黑名单功能让qBittorrent流量不走代理。<span id="more"></span></p>
@@ -345,32 +371,6 @@
         <tag>macvlan</tag>
         <tag>群晖</tag>
         <tag>qBittorrent</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用自定义域名访问GitHub Pages</title>
-    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html</url>
-    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
-<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
-<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
-<ul>
-<li>IPv4</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>IPv6</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
-<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
-<li>打开静态网站的存储库</li>
-<li>点击Settings</li>
-<li>在左边栏找到Code and automation，点击下方的Pages</li>
-<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
-</ul>
-<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
-]]></content>
-      <tags>
-        <tag>github pages</tag>
       </tags>
   </entry>
   <entry>
