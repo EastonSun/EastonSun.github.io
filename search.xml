@@ -24,79 +24,20 @@
       </tags>
   </entry>
   <entry>
-    <title>Win11搭建hexo并部署到GitHub</title>
-    <url>/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html</url>
-    <content><![CDATA[<h2 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>在安装Hexo前，需要先安装以下程序</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span>(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本)</li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span><span id="more"></span>
-<strong>设置npm代理</strong><br>编辑”C:\Users\user\.npmrc”文件，添加以下内容：<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">https-proxy</span>=http://proxy-server-address:port</span><br><span class="line"><span class="attr">proxy</span>=http://proxy-server-address:port</span><br></pre></td></tr></table></figure>
-<strong>查看当前代理</strong><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="built_in">get</span> proxy</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在电脑上新建一个文件夹，例如E:\hexo。进入该文夹在空白处点鼠标右键，选择Open Git Bash here，输入如下命令：</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
-<p>install -g命令是使用npm包管理工具进行全局安装，hexo-cli为hexo的客户端模块。<br>安装完成后，执行以下命令，Hexo会在指定文件夹中新建所需要的文件。</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">hexo init <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>cd <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>node-modules  依赖包</li>
-<li>public    存放生成的页面</li>
-<li>_config.yml   网站的配置文件</li>
-<li>package.json  应用程序信息</li>
-<li>scaffolds     模板文件夹</li>
-<li>source    资源文件夹</li>
-<li>thems     主题文件夹</li>
-</ul>
-<h3 id="修改hexo配置文件"><a href="#修改hexo配置文件" class="headerlink" title="修改hexo配置文件"></a>修改hexo配置文件</h3><p>hexo的配置文件位于站点根目录下，名字为：_config.yml，主要修改以下内容：</p>
-<ul>
-<li>title 网站标题</li>
-<li>subtitle  网站副标题</li>
-<li>description   网站描述</li>
-<li>keywords  网站关键字</li>
-<li>author    作者名字</li>
-<li>language  网站使用的语言，一般改为zh-CN</li>
-<li>timezone  网站时区，一般改为Asia&#x2F;Shanghai</li>
-<li>url   网站网址</li>
-<li>theme 主题名称，比如next</li>
-<li>post_asset_folder 设为true后，执行命令$hexo new post_name会在source&#x2F;_posts中生成和文章同名的文件夹，可以把图片等放到此文件夹中</li>
-<li>在post_asset_folder下面添加如下配置</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>这时<font color=red>![](image.png)</font>会被自动解析</p>
-<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvY29uZmlndXJhdGlvbg==">官网<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="上传至GitHub"><a href="#上传至GitHub" class="headerlink" title="上传至GitHub"></a>上传至GitHub</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>在GitHub个人主页新建一仓库，名称的前半部分为GitHub的用户名，后半部分为github.io<br>在git bash中输入以下命令：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;youremail&quot;</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
-<p>yourname,youremail分别为GitHub的用户名和注册邮箱<br>点击头像选择Settings，点击左侧栏里的SSH and GPG keys，打开C:\Users\user.ssh目录下的id_rsa.pub文件，把内容复制到SSH keys中</p>
-<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>打开blog目录下的_config.yml文件，找到文件末尾的Deployment添加以下内容：</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">    type:</span> git</span><br><span class="line"><span class="symbol">    repo:</span> https:<span class="comment">//github.com/username/username.github.io.git</span></span><br><span class="line"><span class="symbol">    branch:</span> main</span><br></pre></td></tr></table></figure>
-<p>在git bash中输入以下命令安装git部署工具：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h2 id="主题与插件"><a href="#主题与插件" class="headerlink" title="主题与插件"></a>主题与插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=">官网<i class="fa fa-external-link-alt"></i></span>有很多的主题，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25leHQtdGhlbWUvaGV4by10aGVtZS1uZXh0">Next<i class="fa fa-external-link-alt"></i></span>一款很受欢迎的主题。</p>
-<h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><p>在blog目录下运行如下命令；</p>
-<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-<span class="keyword">next</span><span class="symbol">@latest</span></span><br></pre></td></tr></table></figure>
-<p>新建一个名为：_config.next.yml的空文件并运行如下命令：</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cp</span> node_modules/hexo-theme-<span class="keyword">next</span>/_config.yml _config.<span class="keyword">next</span>.yml</span><br></pre></td></tr></table></figure>
-<p>修改_config.yml将theme: landscape改为theme: next</p>
-<h3 id="修改主题配置文件-config-next-yml"><a href="#修改主题配置文件-config-next-yml" class="headerlink" title="修改主题配置文件(_config.next.yml)"></a>修改主题配置文件(_config.next.yml)</h3><ul>
-<li>Schemes   主题样式根据个人喜好选择，我个人喜欢Gemini</li>
-<li>Dark Mode     黑暗模式</li>
-<li>favicon   站点图标，使用自己的图标替换\hexo\blog\node_modules\hexo-theme-next\source\images下的文件</li>
-<li>menu  菜单栏，取消要启用的相关菜单注释即可，需要注意的是除home和archives外其它的页面都需手动创建</li>
-<li>sidebar   侧边栏，将display改为always</li>
-<li>avatar    头像，rounded设置为true头像为圆形，rotated设置为true，鼠标悬停头像会旋转</li>
-<li>excerpt-description   设为false使用&lt;!-- more –&gt;来分隔文章</li>
-<li>Post wordcount display setting：文章字数统计，要启用此插件必须先安装<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="built_in">word</span>-counter</span><br></pre></td></tr></table></figure></li>
-<li>codeblock：代码高亮，个人比较喜欢a11y-dark，更多的高亮主题请<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9oaWdobGlnaHQv">参考<i class="fa fa-external-link-alt"></i></span></li>
-</ul>
-<div class="note info"><p>如果使用不蒜子计数统计，可修改\node_modules\hexo-theme-next\layout_third-party\statistics目录下的busuanzi-counter.njk文件，将</p>
-<figure class="highlight handlebars"><table><tr><td class="code"><pre><span class="line"><span class="language-xml">&lt;script</span><span class="template-variable">&#123;&#123; <span class="name">pjax</span> &#125;&#125;</span><span class="language-xml"> async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>修改为</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://vercount.one/js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+    <title>Hexo添加标签页面</title>
+    <url>/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html</url>
+    <content><![CDATA[<p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
+<h2 id="添加“标签”页面"><a href="#添加“标签”页面" class="headerlink" title="添加“标签”页面"></a>添加“标签”页面</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">添加新页面</a></li><li class="tab"><a href="#first-tab-2">设置页面类型</a></li><li class="tab"><a href="#first-tab-3">编辑菜单</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><p>在 <mark class="label primary">站点根目不下</mark> 鼠标右键点击<font style="background:black">Open Git Bash here</font>，使用命令<font style="background:black">hexo n page tags</font>创建一个新的<font style="background:black">tags</font>页面：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo n page tags</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><p>编辑新页面，将类型改为<font style="background:black">tags</font>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-3"><p>编辑 <mark class="label primary">NexT配置文件</mark> 下的<font style="background:black">menu</font>选项，将<font style="background:black">tags</font>前的注释取消：</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  home:</span> / || fa fa-home</span><br><span class="line"><span class="symbol">  archives:</span> <span class="keyword">/archives/</span> || fa fa-archive</span><br><span class="line"><span class="symbol">  tags:</span> <span class="keyword">/tags/</span> || fa fa-tags</span><br></pre></td></tr></table></figure></div></div></div>
 
-<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">官网文档<i class="fa fa-external-link-alt"></i></span>根据个人需要进行修改</p>
-]]></content>
+<div class="note warning"><p>如果网站启用了评论系统，需要在新建的页面中禁用评论系统：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">itle:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+</div>]]></content>
       <tags>
         <tag>hexo</tag>
-        <tag>github</tag>
+        <tag>标签页面</tag>
       </tags>
   </entry>
   <entry>
@@ -204,6 +145,82 @@
         <tag>ImmortalWrt</tag>
         <tag>ImageBuilder</tag>
         <tag>x86/64</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Win11搭建hexo并部署到GitHub</title>
+    <url>/Win11%E6%90%AD%E5%BB%BAhexo%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0GitHub.html</url>
+    <content><![CDATA[<h2 id="本地安装-Win11"><a href="#本地安装-Win11" class="headerlink" title="本地安装(Win11)"></a>本地安装(Win11)</h2><h3 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h3><p>在安装Hexo前，需要先安装以下程序</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span>(Node.js版本需不低于10.13，建议使用Node.js 12.0及以上版本)</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span><span id="more"></span>
+<strong>设置npm代理</strong><br>编辑”C:\Users\user\.npmrc”文件，添加以下内容：<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">https-proxy</span>=http://proxy-server-address:port</span><br><span class="line"><span class="attr">proxy</span>=http://proxy-server-address:port</span><br></pre></td></tr></table></figure>
+<strong>查看当前代理</strong><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="built_in">get</span> proxy</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在电脑上新建一个文件夹，例如E:\hexo。进入该文夹在空白处点鼠标右键，选择Open Git Bash here，输入如下命令：</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
+<p>install -g命令是使用npm包管理工具进行全局安装，hexo-cli为hexo的客户端模块。<br>安装完成后，执行以下命令，Hexo会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">hexo init <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>cd <span class="keyword">blog</span></span><br><span class="line"><span class="keyword"></span>npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>node-modules  依赖包</li>
+<li>public    存放生成的页面</li>
+<li>_config.yml   网站的配置文件</li>
+<li>package.json  应用程序信息</li>
+<li>scaffolds     模板文件夹</li>
+<li>source    资源文件夹</li>
+<li>thems     主题文件夹</li>
+</ul>
+<h3 id="修改hexo配置文件"><a href="#修改hexo配置文件" class="headerlink" title="修改hexo配置文件"></a>修改hexo配置文件</h3><p>hexo的配置文件位于站点根目录下，名字为：_config.yml，主要修改以下内容：</p>
+<ul>
+<li>title 网站标题</li>
+<li>subtitle  网站副标题</li>
+<li>description   网站描述</li>
+<li>keywords  网站关键字</li>
+<li>author    作者名字</li>
+<li>language  网站使用的语言，一般改为zh-CN</li>
+<li>timezone  网站时区，一般改为Asia&#x2F;Shanghai</li>
+<li>url   网站网址</li>
+<li>theme 主题名称，比如next</li>
+<li>post_asset_folder 设为true后，执行命令$hexo new post_name会在source&#x2F;_posts中生成和文章同名的文件夹，可以把图片等放到此文件夹中</li>
+<li>在post_asset_folder下面添加如下配置</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>这时<font color=red>![](image.png)</font>会被自动解析</p>
+<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3MvY29uZmlndXJhdGlvbg==">官网<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="上传至GitHub"><a href="#上传至GitHub" class="headerlink" title="上传至GitHub"></a>上传至GitHub</h2><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p>在GitHub个人主页新建一仓库，名称的前半部分为GitHub的用户名，后半部分为github.io<br>在git bash中输入以下命令：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;youremail&quot;</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+<p>yourname,youremail分别为GitHub的用户名和注册邮箱<br>点击头像选择Settings，点击左侧栏里的SSH and GPG keys，打开C:\Users\user.ssh目录下的id_rsa.pub文件，把内容复制到SSH keys中</p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p>打开blog目录下的_config.yml文件，找到文件末尾的Deployment添加以下内容：</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">deploy:</span></span><br><span class="line"><span class="symbol">    type:</span> git</span><br><span class="line"><span class="symbol">    repo:</span> https:<span class="comment">//github.com/username/username.github.io.git</span></span><br><span class="line"><span class="symbol">    branch:</span> main</span><br></pre></td></tr></table></figure>
+<p>在git bash中输入以下命令安装git部署工具：</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h2 id="主题与插件"><a href="#主题与插件" class="headerlink" title="主题与插件"></a>主题与插件</h2><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3RoZW1lcy8=">官网<i class="fa fa-external-link-alt"></i></span>有很多的主题，<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25leHQtdGhlbWUvaGV4by10aGVtZS1uZXh0">Next<i class="fa fa-external-link-alt"></i></span>一款很受欢迎的主题。</p>
+<h3 id="Next安装"><a href="#Next安装" class="headerlink" title="Next安装"></a>Next安装</h3><p>在blog目录下运行如下命令；</p>
+<figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">npm install hexo-theme-<span class="keyword">next</span><span class="symbol">@latest</span></span><br></pre></td></tr></table></figure>
+<p>新建一个名为：_config.next.yml的空文件并运行如下命令：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cp</span> node_modules/hexo-theme-<span class="keyword">next</span>/_config.yml _config.<span class="keyword">next</span>.yml</span><br></pre></td></tr></table></figure>
+<p>修改_config.yml将theme: landscape改为theme: next</p>
+<h3 id="修改主题配置文件-config-next-yml"><a href="#修改主题配置文件-config-next-yml" class="headerlink" title="修改主题配置文件(_config.next.yml)"></a>修改主题配置文件(_config.next.yml)</h3><ul>
+<li>Schemes   主题样式根据个人喜好选择，我个人喜欢Gemini</li>
+<li>Dark Mode     黑暗模式</li>
+<li>favicon   站点图标，使用自己的图标替换\hexo\blog\node_modules\hexo-theme-next\source\images下的文件</li>
+<li>menu  菜单栏，取消要启用的相关菜单注释即可，需要注意的是除home和archives外其它的页面都需手动创建</li>
+<li>sidebar   侧边栏，将display改为always</li>
+<li>avatar    头像，rounded设置为true头像为圆形，rotated设置为true，鼠标悬停头像会旋转</li>
+<li>excerpt-description   设为false使用&lt;!-- more –&gt;来分隔文章</li>
+<li>Post wordcount display setting：文章字数统计，要启用此插件必须先安装<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">npm install hexo-<span class="built_in">word</span>-counter</span><br></pre></td></tr></table></figure></li>
+<li>codeblock：代码高亮，个人比较喜欢a11y-dark，更多的高亮主题请<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9oaWdobGlnaHQv">参考<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<div class="note info"><p>如果使用不蒜子计数统计，可修改\node_modules\hexo-theme-next\layout_third-party\statistics目录下的busuanzi-counter.njk文件，将</p>
+<figure class="highlight handlebars"><table><tr><td class="code"><pre><span class="line"><span class="language-xml">&lt;script</span><span class="template-variable">&#123;&#123; <span class="name">pjax</span> &#125;&#125;</span><span class="language-xml"> async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;<span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://vercount.one/js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+
+<p>其它的配置修改可参考<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">官网文档<i class="fa fa-external-link-alt"></i></span>根据个人需要进行修改</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -354,23 +371,6 @@
         <tag>macvlan</tag>
         <tag>群晖</tag>
         <tag>qBittorrent</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo添加标签页面</title>
-    <url>/Hexo%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE%E9%A1%B5%E9%9D%A2.html</url>
-    <content><![CDATA[<p>Hexo允许用户添加自定义页面，最常见的就是添加“标签”页面。<span id="more"></span></p>
-<h2 id="添加“标签”页面"><a href="#添加“标签”页面" class="headerlink" title="添加“标签”页面"></a>添加“标签”页面</h2><div class="tabs" id="first-tab"><ul class="nav-tabs"><li class="tab active"><a href="#first-tab-1">添加新页面</a></li><li class="tab"><a href="#first-tab-2">设置页面类型</a></li><li class="tab"><a href="#first-tab-3">编辑菜单</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-tab-1"><p>在 <mark class="label primary">站点根目不下</mark> 鼠标右键点击<font style="background:black">Open Git Bash here</font>，使用命令<font style="background:black">hexo n page tags</font>创建一个新的<font style="background:black">tags</font>页面：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo n page tags</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-2"><p>编辑新页面，将类型改为<font style="background:black">tags</font>：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="first-tab-3"><p>编辑 <mark class="label primary">NexT配置文件</mark> 下的<font style="background:black">menu</font>选项，将<font style="background:black">tags</font>前的注释取消：</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  home:</span> / || fa fa-home</span><br><span class="line"><span class="symbol">  archives:</span> <span class="keyword">/archives/</span> || fa fa-archive</span><br><span class="line"><span class="symbol">  tags:</span> <span class="keyword">/tags/</span> || fa fa-tags</span><br></pre></td></tr></table></figure></div></div></div>
-
-<div class="note warning"><p>如果网站启用了评论系统，需要在新建的页面中禁用评论系统：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">itle:</span> <span class="string">Tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2024-08-11 14:39:04</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-</div>]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>标签页面</tag>
       </tags>
   </entry>
   <entry>
