@@ -136,7 +136,7 @@
 <figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">make image PROFILE<span class="operator">=</span><span class="string">&quot;profile-name&quot;</span> PACKAGES<span class="operator">=</span><span class="string">&quot;pkg1 pkg2 pkg3 -pkg4 -pkg5 -pkg6&quot;</span> FILES<span class="operator">=</span><span class="string">&quot;files&quot;</span></span><br></pre></td></tr></table></figure>
 <p>编译好的固件存放于<font style="background:black">bin</font>目录下</p>
 <h3 id="清理编译"><a href="#清理编译" class="headerlink" title="清理编译"></a>清理编译</h3><p>要清理临时构建文件和生成的固件，使用<font style="background:black">make clean</font>命令</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">make image \</span><br><span class="line"><span class="attribute">PROFILE</span><span class="operator">=</span><span class="string">&quot;generic&quot;</span> \</span><br><span class="line"><span class="attribute">PACKAGES</span><span class="operator">=</span><span class="string">&quot;-automount -block-mount -kmod-r8101 -kmod-r8125 -kmod-r8126 -kmod-r8168 -kmod-usb-hid -kmod-usb-net -kmod-usb-net-asix -kmod-usb-net-asix-ax88179 -kmod-usb-net-rtl8150 -kmod-usb-net-rtl8152-vendor open-vm-tools open-vm-tools-fuse luci-i18n-ttyd-zh-cn luci-i18n-nikki-zh-cn luci-app-vlmcsd luci luci-i18n-base-zh-cn luci-i18n-package-manager-zh-cn&quot;</span> ROOTFS_PARTSIZE<span class="operator">=</span><span class="string">&quot;1024&quot;</span> \</span><br><span class="line"><span class="attribute">FILES</span><span class="operator">=</span><span class="string">&quot;files&quot;</span> \</span><br><span class="line">EXTRA_IMAGE_NAME<span class="operator">=</span><span class="string">&quot;Release&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">make image \</span><br><span class="line"><span class="attribute">PROFILE</span><span class="operator">=</span><span class="string">&quot;generic&quot;</span> \</span><br><span class="line"><span class="attribute">PACKAGES</span><span class="operator">=</span><span class="string">&quot;-automount -block-mount -kmod-r8101 -kmod-r8125 -kmod-r8126 -kmod-r8168 -kmod-usb-hid -kmod-usb-net -kmod-usb-net-asix -kmod-usb-net-asix-ax88179 -kmod-usb-net-rtl8150 -kmod-usb-net-rtl8152-vendor open-vm-tools open-vm-tools-fuse luci-i18n-ttyd-zh-cn luci-i18n-nikki-zh-cn luci-i18n-vlmcsd-zh-cn luci luci-i18n-base-zh-cn luci-i18n-package-manager-zh-cn&quot;</span> ROOTFS_PARTSIZE<span class="operator">=</span><span class="string">&quot;1024&quot;</span> \</span><br><span class="line"><span class="attribute">FILES</span><span class="operator">=</span><span class="string">&quot;files&quot;</span> \</span><br><span class="line">EXTRA_IMAGE_NAME<span class="operator">=</span><span class="string">&quot;Release&quot;</span></span><br></pre></td></tr></table></figure>
 
 <div class="note warning"><p>如骗译过程中报<font style="background:red">qcow2 error</font>错误，可使用以下命令修复：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install qemu-utils</span><br></pre></td></tr></table></figure>
@@ -282,6 +282,32 @@
       </tags>
   </entry>
   <entry>
+    <title>使用自定义域名访问GitHub Pages</title>
+    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html</url>
+    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
+<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
+<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
+<ul>
+<li>IPv4</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>IPv6</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
+<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
+<li>打开静态网站的存储库</li>
+<li>点击Settings</li>
+<li>在左边栏找到Code and automation，点击下方的Pages</li>
+<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
+</ul>
+<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
+]]></content>
+      <tags>
+        <tag>github pages</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>优化Github Pages国内的访问速度</title>
     <url>/%E4%BC%98%E5%8C%96Github-Pages%E5%9B%BD%E5%86%85%E7%9A%84%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6.html</url>
     <content><![CDATA[<p>本博客托管在Github Pages上，简单方便快捷唯一不好的就是国内访问速度不好，甚至有时出现访问不了的情况。</p>
@@ -307,32 +333,6 @@
       <tags>
         <tag>Github Pages</tag>
         <tag>优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用自定义域名访问GitHub Pages</title>
-    <url>/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages.html</url>
-    <content><![CDATA[<p>在GitHub部署了静态网站后都是使用username.github.io进行访问，如果我们有自己的域名，可以通过自己的域名进行访问。<span id="more"></span></p>
-<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在本地的source文件下新建一个名为：CNAME的文件，内容为你的域名。<font color=red>文件名必须是大写，域名只能有一个。</font></p>
-<h2 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h2><p>在DNS解析服务商处添加两条CNAME记录<br><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/1.png" alt="DNS解析"><br>检查DNS记录配置是否正确</p>
-<ul>
-<li>IPv4</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t A</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">58</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">108.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">109.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">111.153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">3598</span>    IN      A       <span class="number">185.199</span>.<span class="number">110.153</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>IPv6</li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ dig www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span> +noall +answer -t AAAA</span><br><span class="line">www<span class="selector-class">.eyunbook</span><span class="selector-class">.com</span>.       <span class="number">30</span>      IN      CNAME   eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.</span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8000</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8003</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8002</span>::<span class="number">153</span></span><br><span class="line">eastonsun<span class="selector-class">.github</span><span class="selector-class">.io</span>.    <span class="number">30</span>      IN      AAAA    <span class="number">2606</span>:<span class="number">50</span>c0:<span class="number">8001</span>::<span class="number">153</span></span><br></pre></td></tr></table></figure>
-<h2 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h2><ul>
-<li>打开静态网站的存储库</li>
-<li>点击Settings</li>
-<li>在左边栏找到Code and automation，点击下方的Pages</li>
-<li>在Custom domain中填入自己的域名，并勾先下方的Enforce HTTPS,此处我填写的是www的子域，这样访问顶级域名时会自动跳转到www子域</li>
-</ul>
-<p><img data-src="/%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E8%AE%BF%E9%97%AEGitHub-Pages/2.png" alt="github设置"></p>
-]]></content>
-      <tags>
-        <tag>github pages</tag>
       </tags>
   </entry>
   <entry>
@@ -637,6 +637,36 @@
       </tags>
   </entry>
   <entry>
+    <title>在Ubuntu 24.04 中添加非root用户并授予sudo权限</title>
+    <url>/%E5%9C%A8Ubuntu-24-04-%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E5%B9%B6%E6%8E%88%E4%BA%88sudo%E6%9D%83%E9%99%90.html</url>
+    <content><![CDATA[<p>很多VPS默认的用户名为root，但有的时候我们需要非root用户的环境，比如说编译OpenWrt就需要非root用户。<span id="more"></span></p>
+<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>以root用户身份登录，通过以下命令新建用户：</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">adduser </span>username    <span class="comment"># 将username替换为自己的用户名</span></span><br></pre></td></tr></table></figure>
+<p>回车后首先输入新用户的密码，并确认密码：</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">New</span> password:</span><br><span class="line">Retype <span class="keyword">new</span> password:</span><br></pre></td></tr></table></figure>
+<p>剩下的一路回车即可，完成后系统会提示：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">info</span>: Adding <span class="built_in">new</span> <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> supplemental / extra <span class="keyword">groups</span> <span class="string">&#x27;users&#x27;</span></span><br><span class="line"><span class="keyword">info</span>: Adding <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> <span class="keyword">group</span> <span class="string">&#x27;users&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="授予新用户sudo权限"><a href="#授予新用户sudo权限" class="headerlink" title="授予新用户sudo权限"></a>授予新用户sudo权限</h2><p>授予新用户sudo权限有两种方法</p>
+<h3 id="一、将新用户添加到sudo组"><a href="#一、将新用户添加到sudo组" class="headerlink" title="一、将新用户添加到sudo组"></a>一、将新用户添加到sudo组</h3><p>使用以下命令将新用户添加到sudo组：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod -aG <span class="built_in">sudo</span> username</span><br></pre></td></tr></table></figure>
+<h3 id="二、编辑-etc-sudoers文件"><a href="#二、编辑-etc-sudoers文件" class="headerlink" title="二、编辑&#x2F;etc&#x2F;sudoers文件"></a>二、编辑&#x2F;etc&#x2F;sudoers文件</h3><p>使用<mark class="label info">visudo</mark>命令可以打开系统默认的编辑器编辑配置文件<mark class="label ">/etc/sudoers</mark>，在<mark class="label ">/etc/sudoers</mark>中找到<mark class="label primary">root ALL=(ALL:ALL) ALL</mark>，在此行下方添加<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>，保存后退出</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">visudo</span><br><span class="line">root    <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br><span class="line">username <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
+<h2 id="测试新用户的sudo权限"><a href="#测试新用户的sudo权限" class="headerlink" title="测试新用户的sudo权限"></a>测试新用户的sudo权限</h2><p>以新用户身份登录，输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
+<p>输入密码后命令能够正确执行说明新用户添加成功并获得了sudo权限</p>
+<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>以root用户身份登录并输入以下命令：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deluser username</span></span><br></pre></td></tr></table></figure>
+<p>删除用户的同时删除用户的主目录</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">deluser --remove-home username</span><br></pre></td></tr></table></figure>
+<p>如果是通过编辑<mark class="label info">/etc/sudoers</mark>获得的sudo权限，还需要使用<mark class="label info">visudo</mark>命令将<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>删除掉。</p>
+]]></content>
+      <tags>
+        <tag>root</tag>
+        <tag>Ubuntu24.04</tag>
+        <tag>sudo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在 Windows 11 中拥抱 Mihomo：新一代网络代理体验</title>
     <url>/%E5%9C%A8-Windows-11-%E4%B8%AD%E6%8B%A5%E6%8A%B1-Mihomo%EF%BC%9A%E6%96%B0%E4%B8%80%E4%BB%A3%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E4%BD%93%E9%AA%8C.html</url>
     <content><![CDATA[<h2 id="在-Windows-11-中拥抱-Mihomo：新一代网络代理体验"><a href="#在-Windows-11-中拥抱-Mihomo：新一代网络代理体验" class="headerlink" title="在 Windows 11 中拥抱 Mihomo：新一代网络代理体验"></a>在 Windows 11 中拥抱 Mihomo：新一代网络代理体验</h2><p>在追求更自由、更安全的网络体验的道路上，选择一款合适的代理工具至关重要。今天，我想和大家聊聊我在 Windows 11 上使用的新宠——Mihomo，并分享我的使用心得和配置经验。</p>
@@ -711,36 +741,6 @@
         <tag>Mihomo</tag>
         <tag>Windows</tag>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在Ubuntu 24.04 中添加非root用户并授予sudo权限</title>
-    <url>/%E5%9C%A8Ubuntu-24-04-%E4%B8%AD%E6%B7%BB%E5%8A%A0%E9%9D%9Eroot%E7%94%A8%E6%88%B7%E5%B9%B6%E6%8E%88%E4%BA%88sudo%E6%9D%83%E9%99%90.html</url>
-    <content><![CDATA[<p>很多VPS默认的用户名为root，但有的时候我们需要非root用户的环境，比如说编译OpenWrt就需要非root用户。<span id="more"></span></p>
-<h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>以root用户身份登录，通过以下命令新建用户：</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">adduser </span>username    <span class="comment"># 将username替换为自己的用户名</span></span><br></pre></td></tr></table></figure>
-<p>回车后首先输入新用户的密码，并确认密码：</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line"><span class="keyword">New</span> password:</span><br><span class="line">Retype <span class="keyword">new</span> password:</span><br></pre></td></tr></table></figure>
-<p>剩下的一路回车即可，完成后系统会提示：</p>
-<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">info</span>: Adding <span class="built_in">new</span> <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> supplemental / extra <span class="keyword">groups</span> <span class="string">&#x27;users&#x27;</span></span><br><span class="line"><span class="keyword">info</span>: Adding <span class="keyword">user</span> <span class="string">&#x27;username&#x27;</span> <span class="keyword">to</span> <span class="keyword">group</span> <span class="string">&#x27;users&#x27;</span></span><br></pre></td></tr></table></figure>
-<h2 id="授予新用户sudo权限"><a href="#授予新用户sudo权限" class="headerlink" title="授予新用户sudo权限"></a>授予新用户sudo权限</h2><p>授予新用户sudo权限有两种方法</p>
-<h3 id="一、将新用户添加到sudo组"><a href="#一、将新用户添加到sudo组" class="headerlink" title="一、将新用户添加到sudo组"></a>一、将新用户添加到sudo组</h3><p>使用以下命令将新用户添加到sudo组：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">usermod -aG <span class="built_in">sudo</span> username</span><br></pre></td></tr></table></figure>
-<h3 id="二、编辑-etc-sudoers文件"><a href="#二、编辑-etc-sudoers文件" class="headerlink" title="二、编辑&#x2F;etc&#x2F;sudoers文件"></a>二、编辑&#x2F;etc&#x2F;sudoers文件</h3><p>使用<mark class="label info">visudo</mark>命令可以打开系统默认的编辑器编辑配置文件<mark class="label ">/etc/sudoers</mark>，在<mark class="label ">/etc/sudoers</mark>中找到<mark class="label primary">root ALL=(ALL:ALL) ALL</mark>，在此行下方添加<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>，保存后退出</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">visudo</span><br><span class="line">root    <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br><span class="line">username <span class="keyword">ALL</span>=(<span class="keyword">ALL</span>:<span class="keyword">ALL</span>) <span class="keyword">ALL</span></span><br></pre></td></tr></table></figure>
-<h2 id="测试新用户的sudo权限"><a href="#测试新用户的sudo权限" class="headerlink" title="测试新用户的sudo权限"></a>测试新用户的sudo权限</h2><p>以新用户身份登录，输入以下命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br></pre></td></tr></table></figure>
-<p>输入密码后命令能够正确执行说明新用户添加成功并获得了sudo权限</p>
-<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><p>以root用户身份登录并输入以下命令：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deluser username</span></span><br></pre></td></tr></table></figure>
-<p>删除用户的同时删除用户的主目录</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">deluser --remove-home username</span><br></pre></td></tr></table></figure>
-<p>如果是通过编辑<mark class="label info">/etc/sudoers</mark>获得的sudo权限，还需要使用<mark class="label info">visudo</mark>命令将<mark class="label warning">username ALL=(ALL:ALL) ALL</mark>删除掉。</p>
-]]></content>
-      <tags>
-        <tag>root</tag>
-        <tag>Ubuntu24.04</tag>
-        <tag>sudo</tag>
       </tags>
   </entry>
   <entry>
